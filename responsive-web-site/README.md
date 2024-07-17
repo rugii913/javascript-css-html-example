@@ -4,6 +4,9 @@
   - 그런데 float: left를 사용하면 마치 height가 0인 듯이 다음 block과 겹치는 현상이 발생함
     - 이를 해결하려면 clear: both를 사용
 - block 자체를 화면에서 가운데 정렬하려면 margin: 0 auto
-- HTML5부터 등장한 symantic tag
-  - class 이름에 symantic을 넣지 않고, tag 자체에 symantic을 부여함
+- HTML5부터 등장한 semantic tag
+  - class 이름에 semantic을 넣지 않고, tag 자체에 semantic을 부여함
   - tag의 이름 자체에 의미가 있는 div를 만든 것
+  - 참고 자료
+    - https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+    - https://webzz.tistory.com/229
