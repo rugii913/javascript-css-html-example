@@ -1,4 +1,4 @@
-## layout1
+## layout1 - 시맨틱 태그(semantic tag)
 - layout을 잡을 때는 항상 width, height 값을 줘서 영역부터 확인
 - block 간의 구조를 정렬할 때는 float: left를 사용
   - 그런데 float: left를 사용하면 마치 height가 0인 듯이 다음 block과 겹치는 현상이 발생함
@@ -10,3 +10,17 @@
   - 참고 자료
     - https://developer.mozilla.org/en-US/docs/Web/HTML/Element
     - https://webzz.tistory.com/229
+
+## layout2 - 미디어 쿼리(media query)
+- (ex.) https://webstoryboy.github.io/responsive2019/res205_02.html
+  - 화면 크기에 따라 적용되는 css가 달라짐을 확인할 수 있음
+  - 이러한 반응형 사이트의 핵심이 media query
+- media query 참고할 자료
+  - [MDN - CSS media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries)
+    - [MDN - Beginner's guide to media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries)
+    - [MDN - Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+  - [W3C Editor's Draft - Media Queries Level 5](https://drafts.csswg.org/mediaqueries-5/#typedef-media-feature)
+- media query breakpoint 작성 순서 관련 참고 자료
+  - [기타 블로그 - 미디어쿼리 breakpoint 작성순서](https://usingu.co.kr/frontend/css/%EB%AF%B8%EB%94%94%EC%96%B4%EC%BF%BC%EB%A6%AC-breakpoint-%EC%9E%91%EC%84%B1%EC%88%9C%EC%84%9C/)
+    - 데스크탑을 기준점으로 작업할 경우 media query의 max-width만 명시
+    - 아래 설정이 더 위에 쓰여진 설정을 덮어쓰는 CSS 특성을 이용하도록, max-width가 더 작은 속성을 아래 쪽에 적어줌
