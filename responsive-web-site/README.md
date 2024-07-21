@@ -33,3 +33,6 @@
   - 반응형 사이트에서는 기본적으로 scroll bar가 나오지 않도록 해야 함
     - 가장 width가 큰 DOM element의 width가 1200px이라면
     - 브라우저 자체 스크롤바 width 등을 고려하여 break point를 딱 1200px로 줘선 안 됨
+
+## layout4 - media query를 이용한 layout 구성 실습 2
+- header, aside, section, article, footer가 있는 형태

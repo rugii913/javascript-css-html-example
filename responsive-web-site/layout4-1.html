@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>layout2</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    #wrap { width: 100%; }
+    header { width: 100%; height: 150px; background: #81c784; }
+    aside { float: left; width: 30%; height: 700px; background: #66bb6a; }
+    section { float: left; width: 40%; height: 700px; background: #4caf50; }
+    article { float: left; width: 30%; height: 700px; background: #43a047; }
+    footer { clear: both; width: 100%; height: 150px; background: #388e3c; }
+
+    /* viewport의 width 0 ~ 1200px */
+    @media (max-width: 1200px) {
+      aside { width: 40%; }
+      section { width: 60%; }
+      article { clear: both; float: none; width: 100%; height: 300px; } /* article { width: 100%; height: 300px; }로도 같은 결과를 얻을 수 있음 */
+    }
+
+    /* viewport의 width 0 ~ 768px */
+    @media (max-width: 768px) {
+      aside { float: none; width: 100%; height: 300px; }
+      section { float: none; width: 100%; height: 300px; }
+    }
+
+    /* viewport의 width 0 ~ 576px */
+    @media (max-width: 576px) {
+      header { height: 200px; }
+      aside { height: 200px; }
+      section { height: 200px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <header></header>
+    <aside></aside>
+    <section></section>
+    <article></article>
+    <footer></footer>
+  </div>
+</body>
+
+</html>
