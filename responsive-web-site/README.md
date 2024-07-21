@@ -1,5 +1,6 @@
 ## layout1 - 시맨틱 태그(semantic tag)
 - layout을 잡을 때는 항상 width, height 값을 줘서 영역부터 확인
+  - 각 영역 확인 시에는 임시로 background에 색을 줘서 확인
 - block 간의 구조를 정렬할 때는 float: left를 사용
   - 그런데 float: left를 사용하면 마치 height가 0인 듯이 다음 block과 겹치는 현상이 발생함
     - 이를 해결하려면 clear: both를 사용
@@ -24,3 +25,11 @@
   - [기타 블로그 - 미디어쿼리 breakpoint 작성순서](https://usingu.co.kr/frontend/css/%EB%AF%B8%EB%94%94%EC%96%B4%EC%BF%BC%EB%A6%AC-breakpoint-%EC%9E%91%EC%84%B1%EC%88%9C%EC%84%9C/)
     - 데스크탑을 기준점으로 작업할 경우 media query의 max-width만 명시
     - 아래 설정이 더 위에 쓰여진 설정을 덮어쓰는 CSS 특성을 이용하도록, max-width가 더 작은 속성을 아래 쪽에 적어줌
+
+## layout3 - media query를 이용한 layout 구성 실습 1
+- header, aside, section, footer가 있는 형태
+- [(cf.) 각 영역 background에 색 줄 때 참고할 만한 사이트](https://materializecss.com/color.html)
+- 유의사항
+  - 반응형 사이트에서는 기본적으로 scroll bar가 나오지 않도록 해야 함
+    - 가장 width가 큰 DOM element의 width가 1200px이라면
+    - 브라우저 자체 스크롤바 width 등을 고려하여 break point를 딱 1200px로 줘선 안 됨
