@@ -3,7 +3,7 @@
   - 각 영역 확인 시에는 임시로 background에 색을 줘서 확인
 - block 간의 구조를 정렬할 때는 float: left를 사용
   - 그런데 float: left를 사용하면 마치 height가 0인 듯이 다음 block과 겹치는 현상이 발생함
-    - 이를 해결하려면 clear: both를 사용
+    - 이를 해결하려면 clear: both를 사용 → emmet 약어 cl
 - block 자체를 화면에서 가운데 정렬하려면 margin: 0 auto
 - HTML5부터 등장한 semantic tag
   - class 이름에 semantic을 넣지 않고, tag 자체에 semantic을 부여함
@@ -36,3 +36,9 @@
 
 ## layout4 - media query를 이용한 layout 구성 실습 2
 - header, aside, section, article, footer가 있는 형태
+
+## layout5 - media query를 이용한 layout 구성 실습 3
+- header, aside, section 3개, footer가 있는 형태
+- 가운데 정렬
+  - block인 element를 가운데 정렬할 때는 margin: 0 auto
+  - inline인 element를 가운데 정렬할 때는 text-align: center;
