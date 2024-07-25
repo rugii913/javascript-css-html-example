@@ -23,3 +23,31 @@
 - 가이드에서는 each(), $.each()와 같은 식으로 utility 메서드에서는 jQuery namespace를 명시하여 구분함
 */
 $("h1").remove(); // 
+
+// ----------------------------------------------
+
+/* 
+## Using jQuery Core - $(document).ready()
+- (cf.) JQuery<Document>.ready()는 deprecated
+    - https://api.jquery.com/ready/
+    - 위 문서를 참고하면 $( handler ) 방식만 권장함
+    - (ex.) $(function() { .. })
+- (cf.) document 객체는 전역 객체 window의 property 중 하나
+- (cf.) readyStateChange, ready
+    - https://ko.javascript.info/onload-ondomcontentloaded#ref-721
+- ready에 대한 더 자세한 내용은 https://api.jquery.com/ready/ 참고
+
+### $(document).ready(..) vs. $(window).on("load", ..)
+- $(document).ready([실행할 함수])는
+    - 실행할 함수가 DOM이 준비가 된 후(JS를 실행할 수 있는 상태) 단 한 번 실행되도록 함
+- 반면에 $(window).on("load", [실행할 함수])는
+    - DOM이 아닌 전체 페이지(image, iframes 같은 것들을 포함하여)가 모두 준비된 후 실행되도록 함
+*/
+$(function () {
+    console.log("index.js - document ready");
+});
+// index.html의 img 로딩을 기준으로 콘솔 로그 순서를 확인해볼 것
+// - 캐시 비우기 및 강력 새로고침으로 불러와야 좀 더 정확하게 볼 수 있음
+$(window).on("load", function() {
+    console.log("index.js - window loaded");
+});
