@@ -42,3 +42,17 @@
 - 가운데 정렬
   - block인 element를 가운데 정렬할 때는 margin: 0 auto
   - inline인 element를 가운데 정렬할 때는 text-align: center;
+
+## layout6 - media query를 이용한 layout 구성 실습 4
+- header, article, section 그리고 section 내의 10개의 div, footer가 있는 형태
+- cf. block element라면 기본이 width: 100%와 비슷한 상태이므로 생략 가능
+- float과 overflow: hidden
+  - 참고 자료
+    - [MDN - Block formatting context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_display/Block_formatting_context)
+    - [MDN - float](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
+    - [기타 블로그 - Day9. overflow: hidden;이 float의 문제점을 해결할 때 쓰이는 이유](https://velog.io/@kimconut/Day9.-overflow-hidden이-float의-문제점을-해결할-때-쓰이는-이유)
+    - [기타 블로그 - HTML/CSS float와 overflow hidden 5분만에 이해하기](https://1duri1.tistory.com/249)
+    - [기타 블로그 - CSS float 과 overflow / clear fix (내부플로팅 문제해결)](https://velog.io/@mhnormal/CSS-float-과-overflow-clear-fix-내부플로팅-문제해결)
+- nth-last-child()
+  - 참고 자료
+    - [기타 블로그 - 【CSS】제일 마지막 요소부터 세는 nth-last-child()](https://wellcode.tistory.com/5)
