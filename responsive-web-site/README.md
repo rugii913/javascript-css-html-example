@@ -56,3 +56,13 @@
 - nth-last-child()
   - 참고 자료
     - [기타 블로그 - 【CSS】제일 마지막 요소부터 세는 nth-last-child()](https://wellcode.tistory.com/5)
+
+## layout7 - media query를 이용한 layout 구성 실습 5
+- 직접 작성한 layout과 제시된 layout 비교
+  - element 선택 시 반드시 복붙해서 사용(오타 방지)
+  - element 선택 시 태그 이름보다는 클래스 이름으로 선택할 것
+  - 같은 float 값을 가진 element를 쌓아서 정렬하기 위한 overflow: hidden; 사용
+  - 상위 element에 직접 height를 주기보다는 하위 element의 height를 감싸도록 함
+  - width와 margin에 % 사용
+  - 상위 element에서 padding을 사용한 경우,
+    - 하위 요소의 width에서 %를 사용하면, 알아서 상위 요소의 padding을 제외한 안 쪽 부분만을 너비로 계산함
