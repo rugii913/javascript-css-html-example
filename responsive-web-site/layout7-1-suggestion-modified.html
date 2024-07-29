@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>layout</title>
+  <style>
+    /* 제시된 결과물을 조금 더 수정함 */
+    * { margin: 0; padding: 0; }
+    body { background: #e3f2fd; }
+    #wrap { width: 1200px; margin: 0 auto; }
+    #header { width: 100%; height: 100px; background: #b3d9f8; }
+    #banner { width: 100%; height: 400px; background: #83c4fa; }
+
+    #content1 { overflow: hidden; }
+    #content1>.nav { float:left; width: calc(100% / 3); height: 500px; background: #56adf4; }
+    #content1>article { float:left; width: calc(100% * 2 / 3); height: 250px; }
+    #content1>.article-right1 { background: #379cf4; }
+    #content1>.article-right2 { background: #158ef2; }
+
+    #content2 { overflow: hidden; }
+    #content2>article { float: left; width: calc(100% / 3); height: 300px; }
+    #content2>.article-box1 { background: #1480e0; }
+    #content2>.article-box2 { background: #156ecb; }
+    #content2>.article-box3 { background: #105eb7; }
+
+    #content3 { overflow: hidden; padding: 5%; background: #379cf4; }
+    #content3>article { float: left; width: 23%; height: 200px; margin: 1%; border-radius: 5px; background: #156ebc; }
+
+    #footer { width: 100%; height: 100px; background: #56adf4; }
+
+    /* 화면 너비 0 ~ 1240px */
+    @media (max-width: 1240px) {
+      #wrap { width: 100%; }
+      #content2>article { width: calc(100% / 2); }
+      #content2>article:nth-last-child(1) { display: none; }
+
+      #content3>article { width: calc(100% / 3 - 2%) }
+      #content3>article:nth-last-child(1) { display: none; }
+    }
+
+    /* 화면 너비 0 ~ 768px */
+    @media (max-width: 768px) {
+      #content2>article { width: 100%; }
+    }
+
+    /* 화면 너비 0 ~ 576px */
+    @media (max-width: 576px) {
+      #content1>.nav { width: 100%; height: 200px; }
+      #content1>article { width: 100%; height: 200px; }
+
+      #content3>article { width: 98%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header"></header>
+    <section id="banner"></section>
+    <section id="content1">
+      <nav class="nav"></nav>
+      <article class="article-right1"></article>
+      <article class="article-right2"></article>
+    </section>
+    <section id="content2">
+      <article class="article-box1"></article>
+      <article class="article-box2"></article>
+      <article class="article-box3"></article>
+    </section>
+    <section id="content3">
+      <article class="article-square1"></article>
+      <article class="article-square2"></article>
+      <article class="article-square3"></article>
+      <article class="article-square4"></article>
+    </section>
+    <footer id="footer"></footer>
+  </div>
+</body>
+
+</html>

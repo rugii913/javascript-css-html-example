@@ -64,5 +64,11 @@
   - 같은 float 값을 가진 element를 쌓아서 정렬하기 위한 overflow: hidden; 사용
   - 상위 element에 직접 height를 주기보다는 하위 element의 height를 감싸도록 함
   - width와 margin에 % 사용
+    - cf. margin, padding에 %를 사용한 경우 margin, padding top, bottom은 상위 요소의 height 값을 기준으로 하지 않고, width를 기준으로 계산됨
+      - [기타 블로그 - 마진과 패딩에 퍼센트 값 적용](https://hyeonseok.com/blog/709)
+      - [MDN - margin - formal definition 부분 참고](https://developer.mozilla.org/en-US/docs/Web/CSS/margin#formal_definition)
+        - W3C Editor's Draft에서도 width 기준임을 확인할 수 있음
+    - cf. 결과물 제시안에서는 collapse를 고려하지 않았음
+      - [W3C CSS 2.1 Specification - Collapsing margins](https://www.w3.org/TR/CSS2/box.html#collapsing-margins)
   - 상위 element에서 padding을 사용한 경우,
     - 하위 요소의 width에서 %를 사용하면, 알아서 상위 요소의 padding을 제외한 안 쪽 부분만을 너비로 계산함
