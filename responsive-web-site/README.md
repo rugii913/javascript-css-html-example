@@ -72,3 +72,16 @@
       - [W3C CSS 2.1 Specification - Collapsing margins](https://www.w3.org/TR/CSS2/box.html#collapsing-margins)
   - 상위 element에서 padding을 사용한 경우,
     - 하위 요소의 width에서 %를 사용하면, 알아서 상위 요소의 padding을 제외한 안 쪽 부분만을 너비로 계산함
+
+## website outline
+- HTML5 outliner로 구글링해보면 
+  - <https://gsnedders.html5.org/outliner/> 같은 사이트 혹은 크롬 확장 등을 이용해 페이지의 outline를 확인할 수 있음
+- website outline은 웹 접근성, 웹 표준과 관련(?)
+  - 참고
+    - [HTML specisication](https://html.spec.whatwg.org/multipage/sections.html#headings-and-outlines-2)
+    - [MDN \- \<h1\>–<h6\>: The HTML Section Heading elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
+      - [There Is No Document Outline Algorithm](https://adrianroselli.com/2016/08/there-is-no-document-outline-algorithm.html)
+    - [기타 블로그 - HTML 5 | Outline 이용해서 html 구상하기!](https://velog.io/@imzzuu/HTML-5-Outline-이용해서-html-구상하기)
+    - [기타 블로그 - html heading outline - part1](https://esther-kang.tistory.com/14)
+    - [HTML 5's headings outline algorithm](https://www.accessibility-developer-guide.com/examples/headings/html-5-outline/#fact-html-5-outlines-are-not-accessible)
+    - [HTML5 개요(outline) 알고리즘 이해.](https://naradesign.github.io/html5-outline.html)

@@ -3,20 +3,21 @@
 
 <!-- 문서 세팅 https://wtss.tistory.com/211# -->
 <!-- 강의 예시안에서 사용한 sublime text, image 파일, jQuery, modernizr-custom은 일단 사용하지 않음 -->
+
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="rugii913">
   <meta name="description" content="반응형 사이트 따라하기">
   <meta name="keywords" content="반응형 사이트, HTML5">
   <title>Document</title>
-  
+
   <!-- style -->
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
 
   <!-- 단순한 주석이 아니라 조건식 - IE9 이하에서 동작 -->
   <!-- HTLM5shiv ie6~8 -->
-    <!--[if lt IE 9]> 
+  <!--[if lt IE 9]> 
         <script src="js/html5shiv.min.js"></script>
         <script type="text/javascript">
             alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
@@ -25,7 +26,60 @@
 </head>
 
 <body>
-  <p>hello world</p>
+  <header>
+    <h1>반응형 사이트</h1>
+  </header>
+  <nav>
+    <h2>반응형 사이트 전체 메뉴</h2>
+  </nav>
+  <article>
+    <h2>반응형 사이트 서브 타이틀</h2>
+  </article>
+  <main><!-- main은 페이지에 하나만 -->
+    <section>
+      <h2>반응형 사이트 컨텐츠</h2>
+      <!-- section 내 세부 section 3개 -->
+      <section><!-- 왼쪽 컨텐츠 -->
+        <h3>반응형 사이트 왼쪽 컨텐츠</h3>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 왼쪽 컨텐츠 1</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 왼쪽 컨텐츠 2</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 왼쪽 컨텐츠 3</h4>
+        </article>
+      </section>
+      <section><!-- 가운데 컨텐츠 -->
+        <h3>반응형 사이트 가운데 컨텐츠</h3>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 가운데 컨텐츠 1</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 가운데 컨텐츠 2</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 가운데 컨텐츠 3</h4>
+        </article>
+      </section>
+      <section><!-- 오른쪽 컨텐츠 -->
+        <h3>반응형 사이트 오른쪽 컨텐츠</h3>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 오른쪽 컨텐츠 1</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 오른쪽 컨텐츠 2</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 오른쪽 컨텐츠 3</h4>
+        </article>
+      </section>
+    </section>
+  </main>
+  <footer>
+    <h2>반응형 사이트 footer</h2>
+  </footer>
 </body>
 
 </html>
