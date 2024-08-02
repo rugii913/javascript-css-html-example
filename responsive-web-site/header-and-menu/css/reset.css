@@ -1,0 +1,18 @@
+/* 여백 초기화 */
+body, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form, figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+/* a 태그 초기화 */
+a { color: #222; text-decoration: none; }
+a:hover { color: #2698cb; }
+
+/* font 초기화 */
+body {
+  /* https://fonts.google.com/selection/embed */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
+  font-family: "Noto Sans KR", sans-serif; 
+  font-size: 14px;
+  line-height: 1.5;
+}

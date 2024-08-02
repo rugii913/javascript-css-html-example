@@ -1,0 +1,39 @@
+/* layout */
+#header {
+  /* background: url(../img/header_bg.jpg) repeat-x center top; */ /* 강의에서는 image 파일 사용했으나, 나는 사용하지 않음 */
+  background: #52B6E8;
+}
+
+/* container */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* header */
+.header-menu-wrapper {
+  height: 300px;
+}
+
+.header-menu-wrapper>.header-menu {
+  text-align: right;
+}
+
+.header-menu-wrapper>.header-menu a {
+  color: #fff;
+  padding: 8px 0 6px 10px;
+  display: inline-block; /* a는 기본적으로 dislay: inline;이고, 이는 padding-top이 적용되지 않으므로 inline-block으로 변경 */
+  transition: color 0.3s ease; /* https://developer.mozilla.org/ko/docs/Web/CSS/transition */
+  /* font-family: "Abel", sans-serif; */ /* 강의에서는 적용했지만, 나는 적용하지 않은 폰트 */
+}
+
+.header-menu-wrapper>.header-menu a:hover {
+  color: #ccc;
+}
+
+/* media query */
+@media (max-width: 1240px) {
+  .container { width: 100%; }
+  .row { padding: 0 15px; } /* width: 100%;이 적용됐을 때, 바로 붙지 않도록 padding을 주기 위해 사용한 계층 */
+}

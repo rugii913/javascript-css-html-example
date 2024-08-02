@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/style.css">
 
+  <!-- web fonts -->
+   <!-- <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet"> --> <!-- 강의에서는 적용했지만 나는 적용하지 않은 폰트 -->
+
   <!-- 단순한 주석이 아니라 조건식 - IE9 이하에서 동작 -->
   <!-- HTLM5shiv ie6~8 -->
   <!--[if lt IE 9]> 
@@ -26,15 +29,30 @@
 </head>
 
 <body>
-  <header>
-    <h1>반응형 사이트</h1>
+  <!-- header 시작 -->
+  <header id="header">
+    <div class="container">
+      <div class="row">
+        <div class="header-menu-wrapper"> <!-- 강의에서는 class="header"로 작업했으나, 그렇게 하기 싫어서 다른 값을 부여함 -->
+          <div class="header-menu">
+            <a href="#">Blog</a>
+            <a href="#">GitHub</a>
+            <a href="#">Webstandard</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
+  <!-- header 끝 -->
+
   <nav>
     <h2>반응형 사이트 전체 메뉴</h2>
   </nav>
+
   <article>
     <h2>반응형 사이트 서브 타이틀</h2>
   </article>
+
   <main><!-- main은 페이지에 하나만 -->
     <section>
       <h2>반응형 사이트 컨텐츠</h2>
@@ -77,6 +95,7 @@
       </section>
     </section>
   </main>
+
   <footer>
     <h2>반응형 사이트 footer</h2>
   </footer>
