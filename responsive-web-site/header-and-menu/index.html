@@ -31,14 +31,21 @@
 <body>
   <!-- header 시작 -->
   <header id="header">
-    <div class="container">
-      <div class="row">
-        <div class="header-menu-wrapper"> <!-- 강의에서는 class="header"로 작업했으나, 그렇게 하기 싫어서 다른 값을 부여함 -->
+    <div class="container"> <!-- display block의 가운데 정렬을 위해 사용한 계층 -->
+      <div class="row"> <!-- width: 100%;이 적용됐을 때, 브라우저 옆 선에 바로 붙지 않도록 padding을 주기 위해 사용한 계층 -->
+        <div class="header-content-wrapper"> <!-- 강의에서는 class="header"로 작업했으나, 그렇게 하기 싫어서 다른 값을 부여함 -->
           <div class="header-menu">
             <a href="#">Blog</a>
             <a href="#">GitHub</a>
             <a href="#">Webstandard</a>
           </div>
+          <!-- header-menu 끝 -->
+          <div class="header-title">
+            <h1>Web Developer</h1>
+            <br/> <!-- <br/>을 여기서 쓰는 것은 정석적인 방법은 아님, 편의상 사용 -->
+            <a href="https://dooingle.net">https://dooingle.net</a>
+          </div>
+          <!-- header-title 끝 -->
         </div>
       </div>
     </div>

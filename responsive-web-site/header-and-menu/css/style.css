@@ -12,15 +12,15 @@
 }
 
 /* header */
-.header-menu-wrapper {
+.header-content-wrapper {
   height: 300px;
 }
 
-.header-menu-wrapper>.header-menu {
+.header-content-wrapper>.header-menu {
   text-align: right;
 }
 
-.header-menu-wrapper>.header-menu a {
+.header-content-wrapper>.header-menu a {
   color: #fff;
   padding: 8px 0 6px 10px;
   display: inline-block; /* a는 기본적으로 dislay: inline;이고, 이는 padding-top이 적용되지 않으므로 inline-block으로 변경 */
@@ -28,12 +28,51 @@
   /* font-family: "Abel", sans-serif; */ /* 강의에서는 적용했지만, 나는 적용하지 않은 폰트 */
 }
 
-.header-menu-wrapper>.header-menu a:hover {
+.header-content-wrapper>.header-menu a:hover {
   color: #ccc;
+}
+
+.header-content-wrapper>.header-title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 55px;
+}
+
+.header-content-wrapper>.header-title>h1 {
+  font-size: 30px;
+  color: #fff;
+  background: #51b0dc;
+  display: inline-block; /* margin,  padding 등을 이용하기 위해 display inline-block 사용 */
+  padding: 5px 30px 5px 30px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  transition: box-shadow 0.25s ease-in-out;
+}
+
+.header-content-wrapper>.header-title>h1:hover {
+  box-shadow:
+    inset -200px 0 0 0 #257fac,
+    inset 200px 0 0 0 #257fac; /* CSS 3부터는 쉼표를 이용하여 하나의 property에 여러 값을 줄 수 있음 */
+}
+
+.header-content-wrapper>.header-title>a {
+  font-size: 16px;
+  color: #fff;
+  background: #4a9abf;
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  margin-top: -7px;
+  transition: box-shadow 0.25s ease-in-out;
+}
+
+.header-content-wrapper>.header-title>a:hover {
+  box-shadow:
+    0 0 0 5px rgba(75, 154, 191, 0.9) inset,
+    0 0 0 100px rgba(0, 0, 0, 0.1) inset; /* inset은 앞에 붙일 수도 있고, 뒤에 붙일 수도 있음 */
 }
 
 /* media query */
 @media (max-width: 1240px) {
-  .container { width: 100%; }
-  .row { padding: 0 15px; } /* width: 100%;이 적용됐을 때, 바로 붙지 않도록 padding을 주기 위해 사용한 계층 */
+  .container { width: 100%; } /* display block의 가운데 정렬을 위해 사용한 계층 */
+  .row { padding: 0 15px; } /* width: 100%;이 적용됐을 때, 브라우저 옆 선에 바로 붙지 않도록 padding을 주기 위해 사용한 계층 */
 }
