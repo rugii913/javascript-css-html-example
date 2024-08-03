@@ -71,6 +71,64 @@
     0 0 0 100px rgba(0, 0, 0, 0.1) inset; /* inset은 앞에 붙일 수도 있고, 뒤에 붙일 수도 있음 */
 }
 
+.header-content-wrapper>.header-icon {
+  text-align: center;
+  margin-top: 40px;
+  padding-bottom: 44px;
+}
+
+.header-content-wrapper>.header-icon li {
+  display: inline;
+  margin: 0 2px;
+}
+
+.header-content-wrapper>.header-icon li>a {
+  position: relative;
+  background: #3192bf;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  display: inline-block; /* width, height를 적용시키기 위해 display inline-block 사용 */
+  font-size: 32px; /* 아이콘 크기를 설정하기 위해 사용(나는 아이콘 넣지 않았음) */
+  line-height: 60px; /* 아이콘 중앙 정렬하기 위해 사용(나는 아이콘 넣지 않았음) */
+  transition: box-shadow 0.3s ease; /* 강의에서는 box-shadow 대신 all을 줬음 */
+}
+
+.header-content-wrapper>.header-icon li>a>span {
+  position: absolute;
+  left: 50%;
+  top: -32px;
+  transform: translateX(-50%); /* 가운데 정렬처럼 보이게 하기 위해 사용 */
+  font-size: 12px;
+  line-height: 1.6; /* line-height에서 unitless value는 해당 element의 font size 기준으로 배수 값 - (cf.) https://developer.mozilla.org/en-US/docs/Web/CSS/line-height */
+  background: #3192bf;
+  padding: 3px 9px;
+  border-radius: 6px 0; /* 왼쪽 위, 오른쪽 아래에 border-radius */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* 강의에서는 opacity 대신 all을 줬음 */
+}
+
+.header-content-wrapper>.header-icon li>a:hover>span {
+  opacity: 1;
+}
+
+.header-content-wrapper>.header-icon li>a:hover {
+  box-shadow:
+    0 0 0 3px rgba(75, 154, 191, 0.9) inset,
+    0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+}
+
+.header-content-wrapper>.header-icon li>a>span::before { /* border를 이용해서 화살표 모양 만들기 */
+  content: ""; /* (cf.) https://developer.mozilla.org/en-US/docs/Web/CSS/content */
+  position: absolute;
+  left: calc(50% - 6px); /* 강의에서는 left: calc(50% - 6px);를 사용하지 않고, left: 50%; margin-left: -6px;를 사용했음 */
+  bottom: -6px;
+  border-top: 6px solid #3192bf;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
 /* media query */
 @media (max-width: 1240px) {
   .container { width: 100%; } /* display block의 가운데 정렬을 위해 사용한 계층 */
