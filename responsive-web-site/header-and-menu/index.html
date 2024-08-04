@@ -16,17 +16,48 @@
   <link rel="stylesheet" href="./css/style.css">
   <!-- <link rel="stylesheet" href="./css/font-awesome.css"> --> <!-- 강의에서는 font-awesome 사용했으나 나는 사용하지 않음 -->
 
+  <!--
+  <meta> 태그의 여러 type
+  - (참고) [MDN - HTML의 메타데이터 중 Other types of metadata](https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#other_types_of_metadata)
+  - 웹 사이트에 더 풍부한 메타 데이터를 제공할 수 있음
+  -->
+  <!-- Facebook meta tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="반응형 사이트 만들기(title)">
+  <meta property="og:url" content="사이트 url">
+  <!-- <meta property="og:url" content="http://richclub8.dothome.co.kr/responsive/html5/index.html"> -->
+  <meta property="og:image" content="사이트 대표 이미지(아이콘 등)">
+  <!-- <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png"> -->
+  <meta property="og:site_name" content="반응형 사이트 만들기(site_name)">
+  <meta property="og:description" content="반응형 사이트 따라하기(description)">
+
+  <!-- Twitter meta tags -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:site" content="사이트 url">
+  <!-- <meta property="og:url" content="@webstoryboy"> -->
+  <meta property="twitter:title" content="반응형 사이트 만들기(title)">
+  <meta property="twitter:description" content="반응형 사이트 따라하기(description)">
+  <meta property="twitter:image" content="사이트 대표 이미지(아이콘 등)">
+  <!-- <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png"> -->
+
   <!-- web fonts -->
-   <!-- <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet"> --> <!-- 강의에서는 적용했지만 나는 적용하지 않은 폰트 -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet"> --> <!-- 강의에서는 적용했지만 나는 적용하지 않은 폰트 -->
 
   <!-- 단순한 주석이 아니라 조건식 - IE9 이하에서 동작 -->
   <!-- HTLM5shiv ie6~8 -->
   <!--[if lt IE 9]> 
-        <script src="js/html5shiv.min.js"></script>
-        <script type="text/javascript">
-            alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
-        </script>
-    <![endif]-->
+      <script src="js/html5shiv.min.js"></script>
+      <script type="text/javascript">
+          alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+      </script>
+  <![endif]-->
+
+  <!-- script -->
+  <!--
+  (cf.) inline script에 대해서는 defer가 동작하지 않으므로 src script 파일을 따로 분리해야 함 
+  - (참고) [기타 블로그](https://jake-seo-dev.tistory.com/400)
+  -->
+  <script defer type="text/javascript" src="./js/index.js"></script>
 </head>
 
 <body>
@@ -44,7 +75,7 @@
           <div class="header-title">
             <h1>Web Developer</h1>
             <br/> <!-- <br/>을 여기서 쓰는 것은 정석적인 방법은 아님, 편의상 사용 -->
-            <a href="https://dooingle.net">https://dooingle.net</a>
+            <a href="http://localhost:5500/responsive-web-site/header-and-menu/index.html">responsive web site example</a>
           </div>
           <!-- header-title 끝 -->
           <div class="header-icon">
@@ -52,8 +83,8 @@
               <!-- 강의에서는 각 a 태그 하위, span 태그와 같은 계층에 두는 <i> 태그로 font awesome의 아이콘을 불러왔으나 나는 사용하지 않음 -->
               <li><a href="#"><span>HTML5</span></a></li>
               <li><a href="#"><span>GitHub</span></a></li>
-              <li><a href="#"><span>Facebook</span></a></li>
-              <li><a href="#"><span>Twitter</span></a></li>
+              <li><a href="#" class="facebook-share-element"><span>Facebook</span></a></li>
+              <li><a href="#" class="twitter-share-element"><span>Twitter</span></a></li>
             </ul>
           </div>
           <!-- header-icon 끝 -->
