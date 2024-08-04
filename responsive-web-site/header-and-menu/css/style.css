@@ -4,6 +4,10 @@
   background: #52B6E8;
 }
 
+#nav {
+  background: #f6fdff;
+}
+
 /* container */
 .container {
   width: 1200px;
@@ -127,6 +131,57 @@
   border-top: 6px solid #3192bf;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
+}
+
+/* nav 전체 메뉴 */
+.nav-content-wrapper {
+  overflow: hidden;
+  padding: 24px 0;
+}
+
+.nav-content-wrapper>div {
+  float: left;
+  width: 40%;
+}
+
+.nav-content-wrapper>div:last-child {
+  width: 20%;
+}
+
+.nav-content-wrapper>div>ol {
+  overflow: hidden;
+}
+
+.nav-content-wrapper>div>ol>li {
+  float: left;
+  width: 50%;
+  /* 아래는 li::before로 bullet symbol을 넣기 위한 작업 */
+  position: relative;
+  padding-left: 8px;
+  box-sizing: border-box; /* 이 부분이 없으면 box 내부 50%와 padding-left 8px가 별도 공간을 차지하게 되어 원하는 모양이 나오지 않음 */
+}
+
+.nav-content-wrapper>div>ol>li::before {
+  /* bullet symbol 만들기 */
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: #25a2d0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+
+.nav-content-wrapper>div:last-child>ol>li {
+  width: 100%
+}
+
+.nav-content-wrapper>div>h3 {
+  font-size: 18px;
+  color: #25a2d0;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
 /* media query */
