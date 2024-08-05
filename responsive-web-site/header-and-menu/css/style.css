@@ -8,6 +8,10 @@
   background: #f6fdff;
 }
 
+#title {
+  background: #eaf7fd;
+}
+
 /* container */
 .container {
   width: 1200px;
@@ -200,6 +204,42 @@
   color: #25a2d0;
   font-weight: bold;
   margin-bottom: 4px;
+}
+
+/* article.title 부분 */
+.title-content-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.title-content-wrapper>h2 {
+  font-size: 40px;
+  color: #0093bd;
+  padding: 5px 0;
+}
+
+.title-content-wrapper>button { /* (cf.) 강의에서 사용한 아이콘을 사용하지 않으면서 달라진 부분 있음 */
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 60px;
+  height: 60px;
+  background: #3192bf;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.title-content-wrapper>button:hover {
+  box-shadow: 0 0 0 3px rgba(71, 154, 191, 0.9) inset, 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* util 성격 요소 스타일링 */
+.title-content-wrapper>button>.arrow-down { /* (cf.) 강의에서 사용한 아이콘을 사용하지 않으면서 추가된 부분 */
+  display: inline-block;
+  border-top: 12px solid #fff;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
 }
 
 /* media query */
