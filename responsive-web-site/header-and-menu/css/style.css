@@ -1,4 +1,7 @@
 /* layout */
+/* body { background: url(../img/header_bg.jpg) repeat-x center top; } */
+/* 나는 image를 사용하지 않았으므로 background는 #header에 그대로 둠 */
+
 #header {
   /* background: url(../img/header_bg.jpg) repeat-x center top; */ /* 강의에서는 image 파일 사용했으나, 나는 사용하지 않음 */
   background: #52B6E8;
@@ -227,7 +230,7 @@
   background: #3192bf;
   border: none;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .title-content-wrapper>button:hover {
@@ -243,7 +246,37 @@
 }
 
 /* media query */
+/* 화면 너비 0 ~ 1240px */
 @media (max-width: 1240px) {
   .container { width: 100%; } /* display block의 가운데 정렬을 위해 사용한 계층 */
   .row { padding: 0 15px; } /* width: 100%;이 적용됐을 때, 브라우저 옆 선에 바로 붙지 않도록 padding을 주기 위해 사용한 계층 */
+  .title-content-wrapper>button { right: 5px; }
+}
+
+/* 화면 너비 0 ~ 960px */
+@media (max-width: 960px) {
+  .nav-content-wrapper>div { float: none; width: 100%; }
+  .nav-content-wrapper>div:last-child { float: none; width: 100%; }
+  .nav-content-wrapper>div>ol { margin-bottom: 10px; }
+  .nav-content-wrapper>div>ol>li { width: calc(100% / 3); }
+}
+
+/* 화면 너비 0 ~ 768px */
+@media (max-width: 768px) {
+}
+
+/* 화면 너비 0 ~ 576px */
+@media (max-width: 576px) {
+  .header-content-wrapper { height: auto; }
+  .header-content-wrapper>.header-title { display: none; }
+  .header-content-wrapper>.header-icon { display: none; }
+
+  .nav-content-wrapper>div>ol>li { width: 50%; }
+
+  .title-content-wrapper>.button { display: none; }
+}
+
+/* 화면 너비 0 ~ 320px */
+@media (max-width: 320px) {
+  .nav-content-wrapper>div>ol>li { width: 100%; }
 }
