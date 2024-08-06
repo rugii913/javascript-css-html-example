@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- 문서 세팅 https://wtss.tistory.com/211# -->
+<!-- 강의 예시안에서 사용한 sublime text, image 파일, jQuery, modernizr-custom은 일단 사용하지 않음 -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="rugii913" />
+  <meta name="description" content="반응형 사이트 따라하기" />
+  <meta name="keywords" content="반응형 사이트, HTML5" />
+  <title>Document</title>
+
+  <!-- style -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <!-- <link rel="stylesheet" href="./css/font-awesome.css"> --> <!-- 강의에서는 font-awesome 사용했으나 나는 사용하지 않음 -->
+
+  <!--
+  <meta> 태그의 여러 type
+  - (참고) [MDN - HTML의 메타데이터 중 Other types of metadata](https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#other_types_of_metadata)
+  - 웹 사이트에 더 풍부한 메타 데이터를 제공할 수 있음
+  -->
+  <!-- Facebook meta tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="반응형 사이트 만들기(title)" />
+  <meta property="og:url" content="사이트 url" />
+  <!-- <meta property="og:url" content="http://richclub8.dothome.co.kr/responsive/html5/index.html" /> -->
+  <meta property="og:image" content="사이트 대표 이미지(아이콘 등)" />
+  <!-- <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" /> -->
+  <meta property="og:site_name" content="반응형 사이트 만들기(site_name)" />
+  <meta property="og:description" content="반응형 사이트 따라하기(description)" />
+
+  <!-- Twitter meta tags -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="사이트 url" />
+  <!-- <meta property="og:url" content="@webstoryboy" /> -->
+  <meta property="twitter:title" content="반응형 사이트 만들기(title)" />
+  <meta property="twitter:description" content="반응형 사이트 따라하기(description)" />
+  <meta property="twitter:image" content="사이트 대표 이미지(아이콘 등)" />
+  <!-- <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" /> -->
+
+  <!-- web fonts --> <!-- 강의에서는 적용했지만, 나는 웹 폰트 적용하지 않았음 -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet" /> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet" /> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet" /> -->
+
+  <!-- 단순한 주석이 아니라 조건식 - IE9 이하에서 동작 -->
+  <!-- HTLM5shiv ie6~8 -->
+  <!--[if lt IE 9]> 
+      <script src="js/html5shiv.min.js"></script>
+      <script type="text/javascript">
+          alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+      </script>
+  <![endif]-->
+
+  <!-- script -->
+  <!--
+  (cf.) inline script에 대해서는 defer가 동작하지 않으므로 src script 파일을 따로 분리해야 함 
+  - (참고) [기타 블로그](https://jake-seo-dev.tistory.com/400)
+  -->
+  <script defer type="text/javascript" src="./js/index.js"></script>
+</head>
+
+<body>
+  <!-- header 시작 -->
+  <header id="header">
+    <div class="container"> <!-- display block의 가운데 정렬을 위해 사용한 계층 -->
+      <div class="row"> <!-- width: 100%;이 적용됐을 때, 브라우저 옆 선에 바로 붙지 않도록 padding을 주기 위해 사용한 계층 -->
+        <div class="header-content-wrapper"> <!-- 강의에서는 class="header"로 작업했으나, 그렇게 하기 싫어서 다른 값을 부여함 -->
+          <div class="header-menu">
+            <a href="#">Blog</a>
+            <a href="#">GitHub</a>
+            <a href="#">Webstandard</a>
+          </div>
+          <!-- header-menu 끝 -->
+          <div class="header-title">
+            <h1>Web Developer</h1>
+            <br /> <!-- <br/>을 여기서 쓰는 것은 정석적인 방법은 아님, 편의상 사용 -->
+            <a href="http://localhost:5500/responsive-web-site/header-and-menu/index.html">responsive web site example</a>
+          </div>
+          <!-- header-title 끝 -->
+          <div class="header-icon">
+            <ul>
+              <!-- 강의에서는 각 a 태그 하위, span 태그와 같은 계층에 두는 <i> 태그로 font awesome의 아이콘을 불러왔으나 나는 사용하지 않음 -->
+              <li><a href="#"><span>HTML5</span></a></li>
+              <li><a href="#"><span>GitHub</span></a></li>
+              <li><a href="#" class="facebook-share-element"><span>Facebook</span></a></li>
+              <li><a href="#" class="twitter-share-element"><span>Twitter</span></a></li>
+            </ul>
+          </div>
+          <!-- header-icon 끝 -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header 끝 -->
+
+  <nav id="nav">
+    <div class="container">
+      <div class="row">
+        <div class="nav-content-wrapper">
+          <!-- (참고) [기타 블로그 - IR효과기법](https://data05.tistory.com/326) - .ir_su는 접근성을 위한 숨김 텍스트 제공 시 사용 -->
+          <h2 class="ir-su">반응형 사이트 전체 메뉴</h2>
+          <div>
+            <h3>HTML Reference</h3>
+            <ol>
+              <li><a href="#">HTML 태그(Tag)</a></li>
+              <li><a href="#">블록 요소/인라인 요소</a></li>
+              <li><a href="#">DTD 선언</a></li>
+              <li><a href="#">언어 속성 설정</a></li>
+              <li><a href="#">HTML &lt;title&gt;</a></li>
+              <li><a href="#">HTML &lt;meta&gt;</a></li>
+              <li><a href="#">특수문자</a></li>
+              <li><a href="#">하이퍼 링크</a></li>
+              <li><a href="#">HTML &lt;style&gt;</a></li>
+              <li><a href="#">HTML &lt;html&gt;</a></li>
+              <li><a href="#">HTML &lt;head&gt;</a></li>
+              <li><a href="#">HTML &lt;div&gt;</a></li>
+              <li><a href="#">HTML &lt;colgroup&gt;</a></li>
+              <li><a href="#">HTML &lt;caption&gt;</a></li>
+            </ol>
+          </div>
+          <div>
+            <h3>CSS Reference</h3>
+            <ol>
+              <li><a href="#">CSS 선택자</a></li>
+              <li><a href="#">CSS 단위</a></li>
+              <li><a href="#">CSS 색상</a></li>
+              <li><a href="#">CSS 선언 방법</a></li>
+              <li><a href="#">상대주소와 절대주소</a></li>
+              <li><a href="#">CSS float</a></li>
+              <li><a href="#">이미지 표현 방법</a></li>
+              <li><a href="#">이미지 스프라이트</a></li>
+              <li><a href="#">IR 효과</a></li>
+              <li><a href="#">이미지 최적화</a></li>
+              <li><a href="#">background-color</a></li>
+              <li><a href="#">border-style</a></li>
+              <li><a href="#">font-size</a></li>
+              <li><a href="#">text-align</a></li>
+            </ol>
+          </div>
+          <div class="last">
+            <h3>Webstandard</h3>
+            <ol>
+              <li><a href="#">웹 표준</a></li>
+              <li><a href="#">웹 접근성</a></li>
+              <li><a href="#">W3C</a></li>
+              <li><a href="#">웹 접근성 연구소</a></li>
+              <li><a href="#">네이버 널리</a></li>
+              <li><a href="#">다음 다룸</a></li>
+              <li><a href="#">Webstandard</a></li>
+            </ol>
+          </div>
+        </div>
+        <!-- nav-content-wrapper 끝 -->
+      </div>
+    </div>
+  </nav>
+  <!-- nav 끝 -->
+
+  <article id="title">
+    <div class="container">
+      <div class="title-content-wrapper">
+        <h2>"나는 웹 개발자다"</h2>
+        <button type="button" class="button"> <!-- 강의에서는 <a>를 사용했으나, 나는 <button>을 사용 -->
+          <!-- <i class="fa fa-angle-down" aria-hidden="true"></i> --> <!-- 수업에서 사용한 아이콘은 사용하지 않음 -->
+          <div class="arrow-down"></div>
+          <span class="ir-su">전체메뉴 보기</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <article>
+    <h2>반응형 사이트 서브 타이틀</h2>
+  </article>
+
+  <main><!-- main은 페이지에 하나만 -->
+    <section>
+      <h2>반응형 사이트 컨텐츠</h2>
+      <!-- section 내 세부 section 3개 -->
+      <section><!-- 왼쪽 컨텐츠 -->
+        <h3>반응형 사이트 왼쪽 컨텐츠</h3>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 왼쪽 컨텐츠 1</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 왼쪽 컨텐츠 2</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 왼쪽 컨텐츠 3</h4>
+        </article>
+      </section>
+      <section><!-- 가운데 컨텐츠 -->
+        <h3>반응형 사이트 가운데 컨텐츠</h3>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 가운데 컨텐츠 1</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 가운데 컨텐츠 2</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 가운데 컨텐츠 3</h4>
+        </article>
+      </section>
+      <section><!-- 오른쪽 컨텐츠 -->
+        <h3>반응형 사이트 오른쪽 컨텐츠</h3>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 오른쪽 컨텐츠 1</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 오른쪽 컨텐츠 2</h4>
+        </article>
+        <article><!-- 크게 상관은 없지만, section보다 article이 작은 개념 -->
+          <h4>반응형 사이트 오른쪽 컨텐츠 3</h4>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <h2>반응형 사이트 footer</h2>
+  </footer>
+</body>
+
+</html>
