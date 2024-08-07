@@ -15,8 +15,40 @@
   background: #eaf7fd;
 }
 
+#contents>.container {
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+}
+
+#content-left { /* vw가 줄어들 때 content-left와 content-right의 width는 고정 */
+  float: left;
+  width: 250px;
+  height: 1000px;
+}
+
+#content-center {
+  overflow: hidden; /* content-left 영역을 침범하지 않게 하기 위함 */
+  min-height: 1300px;
+  margin-right: 250px; /* content-right 영역을 침범하지 않게 하기 위함 */
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+}
+
+#content-right { /* vw가 줄어들 때 content-left와 content-right의 width는 고정 */
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 1000px;
+}
+
+#footer {
+  border-top: 1px solid #dbdbdb;
+}
+
 /* container */
 .container {
+  position: relative; /* contents 중 #content-right를 고정시키기 위함 */
   width: 1200px;
   margin: 0 auto;
   /* background: rgba(0, 0, 0, 0.3); */ /* 작업 중 영역 확인 용도, 작업 후 주석 처리하여 완성된 화면 파악 */
@@ -237,6 +269,18 @@
   box-shadow: 0 0 0 3px rgba(71, 154, 191, 0.9) inset, 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
 }
 
+/* contents 영역 */
+.column { padding: 15px; border-bottom: 1px solid #dbdbdb; }
+.column.column1 {}
+.column.column2 {}
+.column.column3 { border-bottom: 0; }
+.column.column4 {}
+.column.column5 {}
+.column.column6 { border-bottom: 0; }
+.column.column7 {}
+.column.column8 {}
+.column.column9 { border-bottom: 0; }
+
 /* util 성격 요소 스타일링 */
 .title-content-wrapper>button>.arrow-down { /* (cf.) 강의에서 사용한 아이콘을 사용하지 않으면서 추가된 부분 */
   display: inline-block;
@@ -251,6 +295,8 @@
   .container { width: 100%; } /* display block의 가운데 정렬을 위해 사용한 계층 */
   .row { padding: 0 15px; } /* width: 100%;이 적용됐을 때, 브라우저 옆 선에 바로 붙지 않도록 padding을 주기 위해 사용한 계층 */
   .title-content-wrapper>button { right: 5px; }
+
+  #contents>.container { border: 0; } /* border도 스크롤바의 원인이 되므로 제거해줘야 함 */
 }
 
 /* 화면 너비 0 ~ 960px */
@@ -259,10 +305,29 @@
   .nav-content-wrapper>div:last-child { float: none; width: 100%; }
   .nav-content-wrapper>div>ol { margin-bottom: 10px; }
   .nav-content-wrapper>div>ol>li { width: calc(100% / 3); }
+
+  #content-center {
+    margin-right: 0;
+    border-right: 0;
+  }
+
+  #content-right {
+    position: static;
+    width: 100%;
+    border-top: 1px solid #dbdbdb; 
+  }
 }
 
 /* 화면 너비 0 ~ 768px */
 @media (max-width: 768px) {
+  #content-left {
+    float: none;
+    width: 100%;
+  }
+  
+  #content-center {
+    border-left: 0;
+  }
 }
 
 /* 화면 너비 0 ~ 576px */
