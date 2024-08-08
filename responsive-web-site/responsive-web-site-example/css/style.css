@@ -271,6 +271,15 @@
 
 /* contents 영역 */
 .column { padding: 15px; border-bottom: 1px solid #dbdbdb; }
+.column>.column-title { font-size: 20px; color: #2f7fa6; padding-bottom: 5px; }
+.column>.column-description {
+  border-bottom: 1px dashed #dbdbdb;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  color: #878787;
+  line-height: 18px;
+}
+
 .column.column1 {}
 .column.column2 {}
 .column.column3 { border-bottom: 0; }
