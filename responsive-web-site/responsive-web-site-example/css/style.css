@@ -309,7 +309,40 @@
   background: rgba(36, 130, 174, 0.9);
 }
 
+/* .notice1 게시판 1 */
+.notice1 {}
+.notice1>h5 { font-size: 15px; color: #2f7fa6; padding-bottom: 5px; }
+.notice1>ul>li {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 8px;
+}
+.notice1>ul>li:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #449ce2;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+/* .notice2 게시판 2 */
+
 /* util 성격 요소 스타일링 */
+.mt10 { margin-top: 10px !important; }
+.mt15 { margin-top: 15px !important; }
+.mt20 { margin-top: 20px !important; }
+.mt25 { margin-top: 25px !important; }
+.mt30 { margin-top: 30px !important; }
+.mt35 { margin-top: 35px !important; }
+.mt40 { margin-top: 40px !important; }
+.mt45 { margin-top: 45px !important; }
+.mt50 { margin-top: 50px !important; }
+
 .title-content-wrapper>button>.arrow-down { /* (cf.) 강의에서 사용한 아이콘을 사용하지 않으면서 추가된 부분 */
   display: inline-block;
   border-top: 12px solid #fff;
