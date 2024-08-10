@@ -339,6 +339,38 @@
 }
 
 /* .notice2 게시판 2 */
+.notice2 { position: relative; }
+.notice2>h5 { font-size: 14px; color: #2f7fa6; padding-bottom: 5px; }
+.notice2>ul>li {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; /* (cf.) -webkit은 vendor prefix - Google Chrome 관련 */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* Microsoft Edge에서 제대로 나오려면 -webkit-line-clamp 외에 line-clamp를 부여해야함 */
+  max-height: 40px; /* IE와 같은 예전 브라우저를 고려, overflow hidden이 있으므로, 40px를 넘어가는 내용은 가려짐 */
+  padding-left: 8px;
+  padding-bottom: 4px;
+}
+.notice2>ul>li:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #449ce2;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+.notice2>.more {
+  position: absolute;
+  right: 0;
+  top: 3px;
+  color: #878787;
+  text-transform: uppercase;
+  font-size: 10px;
+}
 
 /* util 성격 요소 스타일링 */
 .mt10 { margin-top: 10px !important; }
