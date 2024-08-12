@@ -372,7 +372,7 @@
   font-size: 10px;
 }
 
-/* .blog1 */
+/* .blog1 - srcset 이용*/
 .blog1>figure>img { width: 100%; }
 /*
 - 가능은 하지만 더 나은 방법이 있기 때문에 권장하지 않음 → srcset 등 다른 방법 사용 권장
@@ -384,6 +384,33 @@ only screen and (min-resolution: 1.5dppx) {
   .blog1 .img-normal { display: none; }
 }
 */
+
+/* .blog2 - background 이용 */
+.blog2>.img-retina {
+  background-image: url(../img/blog4_@1.jpg);
+  background-size: cover;
+}
+
+.blog2>.img-retina>h5 {
+  color: #fff;
+  text-align: center;
+  padding: 30px 30px;
+  text-transform: uppercase;
+}
+
+.blog2>.img-retina>p {padding-top: 5px;}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx) {
+  .blog2>.img-retina { background-image: url(../img/blog4_@2.jpg); }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (min-device-pixel-ratio: 3),
+only screen and (min-resolution: 3dppx) {
+  .blog2>.img-retina { background-image: url(../img/blog4_@3.jpg); }
+}
 
 /* util 성격 요소 스타일링 */
 .mt10 { margin-top: 10px !important; }

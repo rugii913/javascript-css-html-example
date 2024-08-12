@@ -242,20 +242,19 @@
                  <!-- 권장하지 않는 방법 -->
                 <!-- <img src="./img/blog1_@1.jpg" class="img-normal" alt="normal image"> -->
                 <!-- <img src="./img/blog1_@2.jpg" class="img-retina" alt="retina image"> -->
-                 <!-- 권장하는 방법 -->
-                <img src="./img/blog1_@1.jpg" srcset="img/blog1_@1.jpg, img/blog1_@2" alt="normal image">
+                 <!-- 권장하는 방법 - srcset 이용 -->
+                <img src="./img/blog3_@1.jpg" srcset="img/blog3_@1.jpg, img/blog3_@2.jpg, img/blog3_@3.jpg" alt="image">
                 <figcaption>반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다.</figcaption>
               </figure>
             </div>
             <!-- blog1 끝 -->
-            <div class="blog2">
-              <h5 class="ir-su">image2</h5>
-              <figure>
+            <div class="blog2 mt15">
+              <div class="img-retina">
                 <!-- (cf.) 이미지는 업로드하지 않고 로컬에서 확인만 할 수 있도록 .gitignore 추가해두었음 -->
-                <img src="./img/blog2_@1.jpg" alt="normal image">
-                <img src="./img/blog2_@2.jpg" alt="retina image">
-                <figcaption>반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다.</figcaption>
-              </figure>
+                <!-- 권장하는 방법 - background 이용 -->
+                <h5>image2</h5>
+              </div>
+              <p>반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다. 반응형 웹 사이트 이미지 글입니다.</p>
             </div>
             <!-- blog2 끝 -->
           </article>
