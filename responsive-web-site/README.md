@@ -129,3 +129,58 @@
 - 반응형에서 vw 좁아질 때 height 값을 깨는 건 height: auto;로 가능
 - 되도록 반응형 작업은 부분 부분마다 진행할 것
   - 전체 스타일 작업 후 반응형 작업하면 스크롤바가 어느 부분 때문에 생기는지 알기 힘듦
+
+## 컨텐츠 영역 실습
+
+### 컨텐츠 레이아웃
+- #content-center가 float left인 #content-left를 침범하지 않도록 overflow hidden 부여
+- border도 스크롤바의 원인이 되므로 vw가 줄어들 때 없애줘야 함
+- 반응형에서 position absolute를 기본으로 바꾸려면 position static으로 변경
+
+### 컨텐츠 타이틀
+- 메모 없음
+
+### 컨텐츠 메뉴
+- box-shadow를 이용한 마우스 오버 효과
+
+### 컨텐츠 메뉴 반응형
+- 메모 없음
+
+### 컨텐츠 게시판(한 줄 효과)
+- 재활용을 위한 클래스
+  - mt15 같은 클래스 이름으로 스타일링
+  - mt15를 재활용할 수 있을 뿐만 아니라, mt15가 부여된 요소의 다른 클래스를 재활용할 수 있게 만듦
+- CSS에서 !important
+  - [MDN - !important](https://developer.mozilla.org/en-US/docs/Web/CSS/important)
+- 한 줄 효과를 위한 overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+
+### 컨텐츠 게시판(두 줄 효과)
+- 두 줄 효과를 위해 사용한 CSS
+  - display: -webkit-box;
+  - -webkit-box-orient: vertical; (-webkit은 vendor prefix - Google Chrome 관련)
+  - -webkit-line-clamp: 2;
+  - line-clamp: 2;
+  - max-height: 40px; (IE와 같은 예전 브라우저를 고려)
+
+### 블로그 영역(고해상도 이미지 1)
+- 반응형 이미지 - 기기에 따라 다른 이미지를 보여주기
+  - 고해상도 가능한 기기에는 고해상도 이미지 제공
+  - 저해상도 기기에는 리소스 절약을 위해 저해상도 이미지 제공
+  - @media와 <img>를 이용한 방법보다는 srcset을 이용한 방법 추천
+  - (참고) [기타 블로그 - 고밀도 디스플레이를 위한 이미지 다루기](https://blog.hanlee.io/2018/high-density-display-and-images)
+  - (참고) srcset attribute 관련 
+    - [webkit - The srcset Attribute.](https://webkit.org/demos/srcset/)
+    - [MDN - Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+- 웹 작업물을 모바일에서 같은 비율로 보여주기
+  - <meta> 태그로 다음과 같이 작성
+    - \<meta name=\"viewport\" content=\"user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width\"\>
+      - 나는 <meta name="viewport" content="initial-scale=1.0, width=device-width">로 작성
+        - 브라우저에서는 user-scalable, maximum-scale, minimum-scale, 자체를 명시하지 않길 원함
+    - 위 태그가 없으면 원하는 모바일 기기에서 원하는 레이아웃으로 렌더링되지 않음
+    - (참고) [MDN - Viewport meta tag](https://developer.mozilla.org/ko/docs/Web/HTML/Viewport_meta_tag)
+- figure 태그 [MDN - <figure>: The Figure with Optional Caption element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure)
+
+### 블로그 영역(고해상도 이미지 2)
+- 반응형 이미지 확인 사이트 - Daum Troy
+  - (cf.) x3, x4는 정확하게 표출되지 않을 수 있음
+- background와 @media를 이용한 반응형 이미지
