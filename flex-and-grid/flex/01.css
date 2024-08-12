@@ -1,0 +1,15 @@
+.flex-container {
+  display: flex;
+  /* display: inline-flex; */ /* container가 inline-block처럼 동작 */
+
+  flex-direction: row; /* 기본값 */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
+  /* flex-direction: column-reverse; */
+
+  flex-wrap: nowrap; /* 기본값 */
+  /* flex-wrap: wrap; */
+  /* flex-wrap: wrap-reverse; */
+
+  /* flex-flow: row wrap; */ /* 단축 속성 - flex-direction flex-wrap */
+}
