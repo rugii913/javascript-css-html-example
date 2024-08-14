@@ -30,3 +30,37 @@ body>div {
     flex: 1;
   }
 }
+
+.flex-container-3-1 {
+  height: 100px;
+  display: flex;
+
+  justify-content: flex-start; /* 기본값 */ /* start도 가능 */
+  /* justify-content: flex-end; */ /* end도 가능 */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+
+  align-items: stretch; /* 기본값 */
+  /* align-items: flex-start; */ /* start도 가능 */
+  /* align-items: flex-end; */ /* end도 가능 */
+  /* align-items: center; */
+  /* align-items: baseline; */
+}
+
+.flex-container-3-2 {
+  height: 300px;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+
+  align-content: stretch; /* 기본값 */
+  /* align-items: start; */ /* 아래와 비교해보기 */
+  /* align-content: flex-start; */ /* start도 가능 */
+  /* align-content: flex-end; */ /* end도 가능 */
+  /* align-content: center; */
+  /* align-content: space-between; */
+  /* align-content: space-around; */
+  /* align-content: space-evenly; */
+}
