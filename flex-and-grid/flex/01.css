@@ -64,3 +64,28 @@ body>div {
   /* align-content: space-around; */
   /* align-content: space-evenly; */
 }
+
+.flex-container-4-1 {
+  display: flex;
+}
+.flex-container-4-1>.flex-item {
+  /* width: 100px; */ /* width 100px과 flex-basis 100px을 비교 */
+  /* flex-basis: 100px; */
+  flex-grow: 1;
+}
+.flex-container-4-1>.flex-item:nth-child(2) {
+  flex-grow: 3;
+}
+
+.flex-container-4-2 {
+  display: flex;
+  width: 600px;
+}
+.flex-container-4-2>.flex-item:first-child {
+  flex-shrink: 0;
+  flex-basis: 200px;
+}
+.flex-container-4-2>.flex-item:not(:first-child) {
+  flex-grow: 1;
+  word-break: break-all;
+}
