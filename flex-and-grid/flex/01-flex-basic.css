@@ -1,0 +1,234 @@
+body>div {
+  margin-bottom: 2rem;
+}
+
+.flex-container-1 {
+  display: flex;
+  /* display: inline-flex; */ /* container가 inline-block처럼 동작 */
+
+  flex-direction: row; /* 기본값 */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
+  /* flex-direction: column-reverse; */
+
+  flex-wrap: nowrap; /* 기본값 */
+  /* flex-wrap: wrap; */
+  /* flex-wrap: wrap-reverse; */
+
+  /* flex-flow: row wrap; */ /* 단축 속성 - flex-direction flex-wrap */
+}
+
+.flex-container-2 {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 600px) {
+  .flex-container-2 {
+    flex-direction: row;
+  }
+  .flex-container-2>.flex-item {
+    flex: 1;
+  }
+}
+
+.flex-container-3-1 {
+  height: 100px;
+  display: flex;
+
+  justify-content: flex-start; /* 기본값 */ /* start도 가능 */
+  /* justify-content: flex-end; */ /* end도 가능 */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+
+  align-items: stretch; /* 기본값 */
+  /* align-items: flex-start; */ /* start도 가능 */
+  /* align-items: flex-end; */ /* end도 가능 */
+  /* align-items: center; */
+  /* align-items: baseline; */
+}
+
+.flex-container-3-2 {
+  height: 300px;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+
+  align-content: stretch; /* 기본값 */
+  /* align-items: start; */ /* 아래와 비교해보기 */
+  /* align-content: flex-start; */ /* start도 가능 */
+  /* align-content: flex-end; */ /* end도 가능 */
+  /* align-content: center; */
+  /* align-content: space-between; */
+  /* align-content: space-around; */
+  /* align-content: space-evenly; */
+}
+
+.flex-container-4-1 {
+  display: flex;
+}
+.flex-container-4-1>.flex-item {
+  /* width: 100px; */ /* width 100px과 flex-basis 100px을 비교 */
+  /* flex-basis: 100px; */
+  flex-grow: 1;
+}
+.flex-container-4-1>.flex-item:nth-child(2) {
+  flex-grow: 3;
+}
+
+.flex-container-4-2 {
+  display: flex;
+  width: 600px;
+}
+.flex-container-4-2>.flex-item:first-child {
+  flex-shrink: 0;
+  flex-basis: 200px;
+}
+.flex-container-4-2>.flex-item:not(:first-child) {
+  flex-grow: 1;
+  word-break: break-all;
+}
+
+.flex-container-5-1 {
+  display: flex;
+}
+.flex-container-5-1>.flex-item:nth-child(1) {
+  /* flex: 1; */ /* flex: 1 1 0; 과 같음*/
+  width: 25%;
+}
+.flex-container-5-1>.flex-item:nth-child(2) {
+  /* flex: 2; */ /* flex: 2 1 0;과 같음 */
+  width: 50%;
+}
+.flex-container-5-1>.flex-item:nth-child(3) {
+  /* flex: 1; */ /* flex: 1 1 0;과 같음 */
+  width: 25%;
+}
+.flex-container-5-1>.flex-item>p {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.flex-container-5-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-container-5-2>.flex-item {
+  /* flex: 1; */ /* 이렇게 지정할 경우 flex-basis 0이 됨에 유의 */
+  flex: 1 auto;
+  /* item이 여러 줄이 됐을 때, width가 명시되지 않은 두번째  줄에서는 그대로 flex-grow가 적용됨 */
+}
+.flex-container-5-2>.flex-item:nth-child(1) {
+  width: 20%;
+}
+.flex-container-5-2>.flex-item:nth-child(2) {
+  width: 60%;
+}
+.flex-container-5-2>.flex-item:nth-child(3) {
+  width: 20%;
+}
+
+.flex-container-6 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 컨테이너가 전체 화면을 채우도록 만듦 */
+}
+.flex-container-6>.flex-item {
+  flex: 1 auto;
+}
+@media (min-width: 600px) {
+  .flex-container-6 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-collapse: collapse;
+  }
+  .flex-container-6>.flex-item {
+    /* flex-basis: 50%; */ /* cf. flex-basis 지정과 width 지정의 차이점 유의 */
+    width: 50%; /* flex-basis가 기본값 그대로 auto라면, 이 width를 따라감 */
+    /* flex: 0 auto; */ /* flex-basis를 auto로 지정하려면 명시해야함에 유의 */
+    flex-grow: 0;
+  }
+}
+@media (min-width: 900px) {
+  .flex-container-6>.flex-item {
+    width: 30%; /* cf. flex-grow: 1로 지정하면, 늘어날 수 있으므로 33.3333% 처럼 작성할 필요가 없음 */
+    flex-grow: 1;
+  }
+}
+
+.flex-container-7-1 {
+  display: flex;
+  width: 600px;
+  margin: 0 auto 2rem auto;
+}
+.flex-container-7-1>.flex-item {
+  width: 150px;
+}
+.flex-container-7-1>.flex-item:last-child {
+  margin-left: auto; /* margin auto는 남아있는 margin을 모두 소진하려고 함 */
+}
+
+.flex-container-7-2 {
+  display: flex;
+}
+.flex-container-7-2>.flex-item {
+  flex-grow: 1; /* 두번째 item이 flex-basis보다 늘어날 수 있도록 하기 위함 */
+}
+.flex-container-7-2>.flex-item:nth-child(1) {
+  flex: 0 0 auto; /* flex-shrink: 0;과 같음*/
+  width: 150px;
+}
+.flex-container-7-2>.flex-item:nth-child(3) {
+  flex: 0 0 auto; /* flex-shrink: 0;과 같음*/
+  width: 200px;
+}
+
+.flex-container-7-3.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.flex-container-7-3.page>.content {
+  flex: 1 auto;
+  padding: 1.5rem;
+}
+
+.flex-container-8-1 {
+  display: flex;
+  height: 100px;
+}
+.flex-container-8-1>.flex-item:nth-child(2) {
+  align-self: flex-start;
+}
+
+.flex-container-8-2 {
+  display: flex;
+}
+.flex-container-8-2>.flex-item:nth-child(1) {
+  order: 3;
+}
+.flex-container-8-2>.flex-item:nth-child(2) {
+  order: 1;
+}
+.flex-container-8-2>.flex-item:nth-child(3) {
+  order: 2;
+}
+
+.flex-container-8-3 {
+  display: flex;
+}
+.flex-container-8-3>.flex-item {
+  opacity: 0.8;
+}
+.flex-container-8-3>.flex-item:nth-child(1) {
+  transform: scale(1.5);
+  z-index: 1;
+}
+.flex-container-8-3>.flex-item:nth-child(2) {
+  transform: scale(2);
+  z-index: 2;
+}
+.flex-container-8-3>.flex-item:nth-child(3) {
+  transform: scale(2.2);
+}
