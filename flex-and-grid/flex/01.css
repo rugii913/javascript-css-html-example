@@ -89,3 +89,42 @@ body>div {
   flex-grow: 1;
   word-break: break-all;
 }
+
+.flex-container-5-1 {
+  display: flex;
+}
+.flex-container-5-1>.flex-item:nth-child(1) {
+  /* flex: 1; */ /* flex: 1 1 0; 과 같음*/
+  width: 25%;
+}
+.flex-container-5-1>.flex-item:nth-child(2) {
+  /* flex: 2; */ /* flex: 2 1 0;과 같음 */
+  width: 50%;
+}
+.flex-container-5-1>.flex-item:nth-child(3) {
+  /* flex: 1; */ /* flex: 1 1 0;과 같음 */
+  width: 25%;
+}
+.flex-container-5-1>.flex-item>p {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.flex-container-5-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-item {
+  /* flex: 1; */ /* 이렇게 지정할 경우 flex-basis 0이 됨에 유의 */
+  flex: 1 auto;
+  /* item이 여러 줄이 됐을 때, width가 명시되지 않은 두번째  줄에서는 그대로 flex-grow가 적용됨 */
+}
+.flex-container-5-2>.flex-item:nth-child(1) {
+  width: 20%;
+}
+.flex-container-5-2>.flex-item:nth-child(2) {
+  width: 60%;
+}
+.flex-container-5-2>.flex-item:nth-child(3) {
+  width: 20%;
+}

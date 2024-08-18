@@ -59,6 +59,35 @@
     <div class="flex-item">BBBBBBBBBBBBBBBBBBBBBBBBBBBB</div>
     <div class="flex-item">CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</div>
   </div>
+
+  <!-- flex보다 width를 명시하는 편이 나은 예시 - flex-grow, flex-basis로 해결할 수 없음 -->
+  <div class="flex-container flex-container-5-1">
+    <div class="flex-item">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, similique inventore! Molestiae,
+        nam deserunt facere ea ipsum debitis soluta ratione perspiciatis obcaecati! Quos dicta odio sequi id deserunt et at
+        soluta placeat a omnis nulla distinctio iste laudantium illo ipsam libero vero sint fugit voluptatum optio officia,
+        aut voluptas. Veritatis!
+      </p>
+    </div>
+    <div class="flex-item">BBB</div>
+    <div class="flex-item">CCCCCCCCCCCCCCCCCCCCC</div>
+  </div>
+
+  <!-- width와 더불어 flex-grow를 함께 사용하면 좋은 예시 -->
+  <div class="flex-container flex-container-5-2">
+    <div class="flex-item">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, similique inventore! Molestiae,
+        nam deserunt facere ea ipsum debitis soluta ratione perspiciatis obcaecati! Quos dicta odio sequi id deserunt et at
+        soluta placeat a omnis nulla distinctio iste laudantium illo ipsam libero vero sint fugit voluptatum optio officia,
+        aut voluptas. Veritatis!
+      </p>
+    </div>
+    <div class="flex-item">BBB</div>
+    <div class="flex-item">CCCCCCCCCCCCCCCCCCCCC</div>
+    <div class="flex-item">DDDDDDDDDDDDDDDDDDDDDDDDD</div>
+  </div>
 </body>
 
 </html>
