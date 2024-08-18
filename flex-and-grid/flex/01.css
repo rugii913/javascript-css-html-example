@@ -114,7 +114,7 @@ body>div {
   display: flex;
   flex-wrap: wrap;
 }
-.flex-item {
+.flex-container-5-2>.flex-item {
   /* flex: 1; */ /* 이렇게 지정할 경우 flex-basis 0이 됨에 유의 */
   flex: 1 auto;
   /* item이 여러 줄이 됐을 때, width가 명시되지 않은 두번째  줄에서는 그대로 flex-grow가 적용됨 */
@@ -127,4 +127,32 @@ body>div {
 }
 .flex-container-5-2>.flex-item:nth-child(3) {
   width: 20%;
+}
+
+.flex-container-6 {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 컨테이너가 전체 화면을 채우도록 만듦 */
+}
+.flex-container-6>.flex-item {
+  flex: 1 auto;
+}
+@media (min-width: 600px) {
+  .flex-container-6 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-collapse: collapse;
+  }
+  .flex-container-6>.flex-item {
+    /* flex-basis: 50%; */ /* cf. flex-basis 지정과 width 지정의 차이점 유의 */
+    width: 50%; /* flex-basis가 기본값 그대로 auto라면, 이 width를 따라감 */
+    /* flex: 0 auto; */ /* flex-basis를 auto로 지정하려면 명시해야함에 유의 */
+    flex-grow: 0;
+  }
+}
+@media (min-width: 900px) {
+  .flex-container-6>.flex-item {
+    width: 30%; /* cf. flex-grow: 1로 지정하면, 늘어날 수 있으므로 33.3333% 처럼 작성할 필요가 없음 */
+    flex-grow: 1;
+  }
 }
