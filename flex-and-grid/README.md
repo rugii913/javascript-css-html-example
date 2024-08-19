@@ -192,6 +192,25 @@
 
 ## Flex UI 만들기
 
+### Flex UI \#1 - 메뉴
+- (cf.) rem과 em의 사용
+  - font-size는 root를 따라가도록 rem 사용
+  - padding은 현재 font-size에 비례하도록 em 사용
+- width가 있을 때의 flex-shrink
+  - 메뉴 예제에서 width 25%, flex-basis auto(기본값)인 상태에서 flex-shrink 1(기본값)이므로
+    - hover 시 한 item의 width를 늘린다면, 다른 item들은 알아서 shrink
+      - 이는 flex-wrap: nowrap 기본값의 영향도 있음
+  - 추가 참고 자료
+    - [MDN - CSS Flexible Box Layout \> flexbox의 기본 개념](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+    - [기타 블로그 - CSS flexbox: flex-item의 크기 조절](https://seukjjang.tistory.com/6)
+    - [기타 블로그 - \[CSS\] Flexbox 크기 제어 전략: flex-basis, flex-grow, flex-shrink, width, max-width, min-width](https://dev-chim.tistory.com/entry/CSS-Flexbox-flex-basis-width)
+    - [기타 블로그 - ](https://choar816.tistory.com/119)
+      - Item의 content를 변화시키지 않을 때까지만 줄어든다고 함(디폴트로 min-width: auto, min-height: auto)
+        - content까지 무시하고 줄어들게 하려면 overflow를 적절히 설정
+    - flex-shirink의 자세한 계산 참고 - container의 렌더링 가능한 부분을 넘어선 크기가 기준
+      - [기타 블로그 - CSS 플렉스박스(flex) flex-grow와 flex-shrink 속성](https://velog.io/@dlwoxhd/CSS-플렉스박스flex-flex-grow와-flex-shrink-속성)
+      - [MDN - Controlling ratios of flex items along the main axis](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis)
+
 ## Flex로 반응형 페이지 만들기
 
 ## Grid 핵심 정리

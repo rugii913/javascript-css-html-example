@@ -1,10 +1,35 @@
 /* menu */
+.menu {
+  display: flex;
+}
+/*
+- width를 사용한 경우
+  - width 25%, flex-basis auto(기본값)인 상태에서 flex-shrink 1(기본값)이므로 한 item이 늘어나면 다른 item들은 알아서 shrink
+*/
 .menu-item {
+  width: 25%;
   background: gold;
+  transition: 0.5s;
 }
 .menu-item:hover {
+  width: 35%; 
   background: crimson;
 }
+/* 
+- flex-grow를 사용한 경우
+  - (cf.) width와 flex-grow 중 어느 쪽을 사용해도 크게 상관 없겠으나, IE에서 transition이 flex-grow에는 동작하지 않는 문제가 있음
+*/
+/*
+.menu-item {
+  flex-grow: 1;
+  background: gold;
+  transition: 0.5s;
+}
+.menu-item:hover {
+  flex-grow: 1.5;
+  background: crimson;
+}
+*/
 .menu-link {
   display: block; /* 전체 영역 클릭할 수 있도록 inline-block에서 block으로 바꿔줌 */
   padding: 1em; /* 현재 font-size만큼의 padding을 주기 위해 em 사용 */
