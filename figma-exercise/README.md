@@ -136,7 +136,169 @@
 - **피그마에서 작업하는 기본 순서: 도구 선택 → 그리기 → 속성 설정**
   - 피그마 인터페이스 이해와 연관
 - 기본 순서 상세 → 속성 설정 작업이 가장 까다로운 작업
-  - 1\. 도구 선택 - 상단 툴바 이용 (비유 - 펜으로 그릴 거냐, 연필로 그릴 거냐 선택)
-  - 2\. 그리기 - 캔버스에서 작업, 캔버스에서 그린 요소들은 레이어에도 반영됨 (비유 - 그림을 그림)
-  - 3\. 속성 설정 - 오른쪽 디자인 패널에서 속성 작업 (비유 - 그림 수정, 색칠 등등)
+  - 1\. 도구 선택(상단) - 상단 툴바 이용 (비유 - 펜으로 그릴 거냐, 연필로 그릴 거냐 선택)
+  - 2\. 그리기(왼쪽) - 캔버스에서 작업, 캔버스에서 그린 요소들은 레이어에도 반영됨 (비유 - 그림을 그림)
+  - 3\. 속성 설정(오른쪽) - 오른쪽 디자인 패널에서 속성 작업 (비유 - 그림 수정, 색칠 등등)
+
+### 피그마 상단 인터페이스 - 도구 선택
+
+#### 툴바 \> 상단 왼쪽 - Tools → 직접 도구를 선택하는 부분
+
+- 상단 인터페이스인 툴바 중 왼쪽 부분인 Tools 부분
+- 각 부분들
+  - 피그마 로고 버튼: 피그마 전체 메뉴
+    - (cf.) 메뉴 중 Quick actions(단축키 ctrl + /)를 이용해 도움말들을 확인할 수 있음
+    - 피그마 로고 버튼 오른쪽으로 있는 버튼들은 모두 피그마 요소를 작업하기 위한 버튼들
+  - move and scale tools
+    - move - 단축키 v: 요소를 이동시킴
+      - 요소의 크기 조절을 할 수도 있음
+      - 하지만 move tool로 프레임의 크기 조절을 할 때, 해당 프레임의 하위 요소의 크기는 변경되지 않음
+        - 크기 조절 대상 프레임 하위 요소까지 조절하려면 move tool이 아닌 scale tool을 사용해야 함
+    - scale - 단축키 k: 프레임 하위의 요소까지 함께 scaling하기 위해 사용
+  - frame and slice tools
+    - frame - 단축키 f: 가장 많이 사용할 피그마의 작업 영역
+    - section - 단축키 shift + s: 프레임 혹은 섹션 여러 개를 묶어주는 단위
+    - slice - 단축키 s: 슬라이스를 사용한 곳만 잘라서 이미지로 배포 가능
+  - shape tools → 섹션 2에서 사용해볼 것, 클릭해서 모양을 만듦
+    - rectangle - 단축키 r
+    - line - 단축키 l
+    - arrow - 단축키 shift + l
+    - ellipse - 단축키 o
+    - polygon
+    - star
+    - place image/video - 단축키 ctrl + shift + k
+  - creation tools → 그림을 그리는 것처럼 사용하므로 shape tools와는 구분됨
+    - pen - 단축키 p
+    - pencil - 단축키 shift + p
+  - text tool → 섹션 2에서 사용해볼 것, text 자체에 고유한 옵션들이 있기에 shape tools, creation tools와는 구분됨
+    - text - 단축키 t
+  - resources modal - 단축키 shift + i → 섹션 3에서 사용해볼 것
+    - 플러그인, 위젯을 사용할 때 이용
+    - 디자인에서 반복되는 요소들을 컴포넌트로 만들어, 이들을 끌어다 쓸 때 이용
+  - hand tool - 단축키 h
+    - 화면을 이동할 때에 사용
+  - comment tool - 단축키 c
+    - 주석을 남길 수 있음
+    - 협업 구성원끼리 커뮤니케이션 가능
+
+#### 툴바 \> 상단 가운데 - Contextual Tool Bar
+
+- 가운데 canvas 혹은 왼쪽 layers에서 선택한 요소에 따라 다른 tool들을 보여주는 툴바
+
+##### 아무 요소도 선택하지 않은 상태
+
+- 파일 위치, 제목을 보여줌
+- 더블 클릭해서 파일 제목 변경 가능
+- 오른쪽 ∨을 클릭하면 파일 관련 메뉴 확인 가능
+  - Show version history: 파일 수정 이력들을 날짜, 시간대 별로 보여줌
+    - 특정 수정 버전 마우스 우클릭 → Restore this version을 클릭하면 해당 버전으로 되돌아갈 수 있음
+    - 특정 수정 버전 마우스 우클릭 → Duplicate를 클릭하면 해당 버전 복제 후 필요한 부분만 가져올 수 있음
+    - 작업이 끝난 뒤에는 esc 혹은 왼쪽 상단 Done 버튼을 클릭하여 작업 환경으로 되돌아갈 수 있음
+  - Publish library: 해당 파일을 라이브러리로 사용 → 섹션 3에서 살펴볼 것
+  - Export: 팝업 창에서 파일 내의 프레임을 선택하여 특정 리소스 형태로 내보내기 가능 - 단축키 ctrl + shift + e
+  - Create branch: git의 branch 같은 느낌 - 유료 버전만 가능
+  - File color profile: 컬러 프로파일 설정
+  - File color profile 아래의 메뉴들은 파일 및 프로젝트 관련 작업
+
+##### 특정 요소를 선택한 경우
+
+- (cf.) 어떤 요소를 선택했는지에 따라 보이는 툴들이 달라지지만 결국 볼 수 있는 것은 12개의 툴
+  - (1) Use as mask - 단축키 ctrl + alt + m
+  - (2) Boolean groups
+  - (3) Edit object
+  - (4) Wrap in new section - 단축키 ctrl + s
+  - (5) Crop image
+  - (6) Create link - 단축키 ctrl + k
+  - (7) Select matching layers - 단축키 ctrl + alt + a
+  - (8) Multi-edit text - 단축키 (여러 text 요소 선택한 상태에서) enter
+  - (9) Mark as ready for dev
+  - (10) Create component - 단축키 ctrl + alt + k
+  - (11) Add variant
+  - (12) Multi-edit variants - 단축키 (여러 variant 선택한 상태에서) q
+  - (13) Reset all changes
+- 일반적인 object 요소를 선택한 경우
+  - Edit object: 세부 수정 모드
+  - Create component: 해당 object를 component로 만듦
+  - Use as mask: 마스크 처리
+  - object 요소를 **여러 개 선택한 경우** 추가되는 툴(cf. Edit object 툴 버튼은 보이지 않게 됨)
+    - Create component 오른쪽 ∨ 메뉴 버튼 하위로 도구 추가
+      - Create multiple components
+      - Create component set
+    - Boolean groups 및 오른쪽 ∨ 메뉴 버튼 하위 도구 추가
+      (object가 겹쳐있을 때 겹친 부분을 다양한 방법으로 계산하여 결합하는 툴들 → 섹션 2에서 살펴볼 것)
+      - Union selection
+      - Subtract selection
+      - Intersect selection
+      - Exclude selection
+      - Flatten selection
+  - **frame 안에 있는 object 요소**를 선택한 경우 추가되는 툴
+    - Select matching layers: 전체 프레임에서 일치하는 layer를 선택
+      - 동시에 선택된 layer들을 multi edit 가능  
+        → position, alignment, 기타 properties를 한 번에 수정할 수 있음
+      - 어떤 layer들이 선택될지 미리 확인하려면, 대상 object를 선택한 상태에서 shift 누름
+      - 참고 자료
+        - [기업 블로그(위디엑스) - 피그마 신기능 출시 : Multi-Edit 멀티 에디트 \(2024년 3월 7일 추가 기능\)](https://www.wedesignx.com/knowledge/figma-news-multi-edit)
+        - [공식 홈페이지 - Select layers and objects 중 Select matching objects](https://help.figma.com/hc/en-us/articles/360040449873-Select-layers-and-objects#h_01HR880DTR7BD91C5SJPGE1KW7)
+- 이미지 요소를 선택한 경우 → 일반 object 선택했을 때 보이는 툴들 + Crop image 툴 버튼
+  - Edit object
+  - Create component
+  - Use as mask
+  - Crop image: 이미지 크롭 처리
+- text 요소를 선택한 경우 → 일반 object 선택했을 때 보이는 툴들 + Create link 툴 버튼
+  - Edit object
+  - Create component
+  - Use as mask
+  - Create link: 텍스트에 링크 걸기
+  - text 요소를 **여러 개 선택한 경우** 추가되는 툴(cf. Edit object, Create link 툴 버튼은 보이지 않게 됨)
+    - Multi-edit text + 일반적인 object 여러 개 선택한 경우 추가되는 툴들
+- component를 선택한 경우
+  - Add variant: variant에 추가
+    - 모양이나 성격이 비슷한 컴포넌트가 있을 때, 요소들을 variation으로 묶음
+  - Use as mask
+  - Mark as ready for dev: dev 모드 준비된 요소로 표시
+- frame 요소를 선택한 경우
+  - Create component
+  - Use as mask
+  - Mark as ready for dev
+  - frame 요소를 **여러 개 선택한 경우** 추가되는 툴(cf. Edit object 툴 버튼은 보이지 않게 됨)
+    - Wrap in new section: 프레임이 같은 성격일 경우 섹션으로 묶기
+    - Create component 오른쪽 ∨ 메뉴 버튼 - 여러 요소들을 어떤 방식으로 컴포넌트로 만들지 결정
+      - Create multiple components
+      - Create component set
+    - Boolean groups
+- section을 선택한 경우
+  - Mark as ready for dev
+
+#### 툴바 \> 상단 오른쪽 - Share and View Settings
+
+- 주로 협업 관련 부분
+- (1) 현재 파일에 들어온 사용자를 보여주는 부분
+  - 다른 사용자 아바타 클릭 시 해당 사용자를 따라다닐 수 있음
+- (2) 자신을 가리키는 부분 + "∨" 버튼
+  - Spotlight me로 모든 사용자에게 따라다니기 요청 가능
+  - 따라다니는 중 헤드셋 아이콘(Start conversation) 클릭하여 음성 채팅 가능
+  - 특정 사용자에게만 따라다니기 요청도 가능
+- (3) Share 버튼 - 파일 작업자 초대
+- (4) Dev mode 토글 버튼
+  - 활성화 시 개발자에게 전달하는 화면으로 변경
+- (5) ▷ 버튼 + "∨" 버튼
+  - Present: 프레젠테이션 화면
+  - Preview: 미러링
+- (6) xx% + "∨" 버튼: view 세팅 버튼
+  - Zoom 관련 부분
+    - Zoom in(단축키 ctrl + +)
+    - Zoom out(단축키 ctrl + -)
+    - Zoom to fit(단축키 shift + 1)
+    - Zoom to 100%(단축키 ctrl + 0)
+  - Pixel preview(단축키 ctrl + shift + p): 픽셀로 봤을 때는 어떻게 보일지 확인 활성화/비활성화
+  - Pixel grid(단축키 shift + '(작은 따옴표)): 1px 단위 가이드 활성화/비활성화
+  - Snap to pixel grid(단축키 ctrl + shift + '(작은 따옴표)): 픽셀에 달라붙도록 설정 활성화/비활성화
+  - Layout grids(단축키 shift + g): 레이아웃을 돕는 그리드 보이기 활성화/비활성화
+    - 만들어둔 그리드가 없으면 보이는 그리드가 없음
+  - Rulers(단축키 shift + r): 룰러 보이기 활성화/비활성화
+  - Outliner(단축키 ctrl + shift + o): 색, 속성 등이 보이지 않고 뼈대만 보는 모드 활성화/비활성화
+    - 겹쳐있는 요소, margin과 간격 구분 등을 위해 사용
+  - Multiplayer cursors(단축키 ctrl + alt + \): 다수 사용자가 있는 경우 다른 사용자 위치 보이기 활성화/비활성화
+  - Comments(단축키 shift + c): 주석 보이기 활성화/비활성화
+
 
