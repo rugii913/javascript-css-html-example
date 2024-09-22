@@ -334,4 +334,23 @@
     - 다른 디자인 파일과 연결이 되어있다면 다른 디자인 파일의 리소스도 함께 보여줌
 - Assets panel의 우측 상단 책 모양 아이콘(Libraries)을 클릭하면 로컬 컴포넌트 배포 가능 → 다른 디자인 파일에서 동기화하여 사용 가능
 
+### 피그마 우측 인터페이스 - 속성 설정
+
+#### **오른쪽 패널 \> 디자인 모드 살펴보기 - Design / Prototype Panel**
+- (cf.) Design panel 단축키 alt + 8 / Prototype panel 단축키 alt + 9
+- Design panel
+  - 피그마 작업 순서(도구 선택\(상단\) → 그리기\(왼쪽\) → 속성 설정\(오른쪽\)) 중 마지막인 속성 설정 단계와 관련
+    - 상단 tool bar에서 tool을 선택해 canvas에 그리고 layer 혹은 canvas에서 element를 선택해서 Design panel에서 속성을 설정하는 것
+  - 마치 상단 contextual tool bar가 그렇듯이 어떤 element를 선택하느냐에 따라 설정할 수 있는 속성이 달라짐
+  - 아무 element도 선택하지 않은 canvas 상태의 Design panel만 간단히 살펴보면
+    - Page: canvas 자체의 color 설정
+    - Local variables, Local styles (cf. canvas 상태일 때만 보이는 속성)
+      - 디자인 파일에서 사용 가능한 variable과 style
+    - Export: canvas 전체를 하나의 통 이미지로 내보내기
+      - + 버튼을 누르면 내보내기를 위한 상세 설정 가능
+- Prototype panel
+  - Prototype: 디자인된 화면을 실제로 동작하는 것처럼 화면을 연결하는 것
+  - 연결할 때 여러 interaction 설정 가능
+    - 연결하려면 화면들이 모두 frame이어야 함
+
 
