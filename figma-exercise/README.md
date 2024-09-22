@@ -301,4 +301,37 @@
   - Multiplayer cursors(단축키 ctrl + alt + \): 다수 사용자가 있는 경우 다른 사용자 위치 보이기 활성화/비활성화
   - Comments(단축키 shift + c): 주석 보이기 활성화/비활성화
 
+### 피그마 좌측 인터페이스 - 그리기
+
+#### **왼쪽 패널 살펴보기 - Page**
+- page: 파일의 하위 개념
+  - 스케치북에 비유하면 스케치북이 파일, 그림을 그릴 종이의 빈 공간을 canvas, 인식할 수 있는 종이 자체를 page에 비유할 수 있을 것
+- 페이지 오른쪽의 ∨ 버튼을 누르면 모든 페이지를 펼쳐서 볼 수 있음
+  - + 버튼을 누르면 페이지 추가 가능, 각 페이지마다 캔버스를 가짐
+- 페이지를 우클릭하면
+  - Copy link to page: 페이지 링크 공유
+  - Rename page: 페이지 이름 변경 - 페이지 이름을 더블 클릭해도 변경 가능
+  - Duplicate page: 페이지 복제
+  - Delete page: 페이지 삭제
+    - 삭제 확인 경고창 없으므로 신중하게 클릭
+    - undo(ctrl + z)를 이용해서 페이지 삭제 취소는 가능
+
+#### **왼쪽 패널 살펴보기 - Layers Panel**
+- (cf.) 단축키 alt + 1
+- layers panel: canvas에 있는 여러 element(Section, Frame, 기타 element 모두 포함)들을 계층별로 보여주는 공간
+  - 각 element의 ∨ 버튼을 누르면 하위 element 확인 가능
+- layer panel에서 각 layer는 layer의 타입을 알려주는 metaphor(아이콘 같은 것)와 layer의 이름으로 표시됨
+  - canvas에서 element의 속성을 바꾸면(ex. component로 바꾸기) layer panel에서 metaphor로 보여주는 타입도 변경됨
+  - canvas에서 element를 생성하면 layer panel에서 표시되듯, layer panel에서 element를 생성(ex. 해당 layer의 하위로 다른 element 붙여넣기)해도 canvas에 표시됨
+- 최상위 layer는 이름이 볼드체로 표시
+
+#### **왼쪽 패널 살펴보기 - Assets Panel\(개념정리\)**
+- (cf.) 단축키 alt + 2
+- asset: 디자인을 하기 위한 리소스
+  - 버튼, 컬러, 아이콘 등 다양한 것들이 리소스가 될 수 있음
+  - 여러 피그마 디자인 파일을 서로 연결해서 사용할 수 있고
+    - 현재 작업 중인 파일(로컬 파일)에 있는 리소스는 기본으로 보여주고
+    - 다른 디자인 파일과 연결이 되어있다면 다른 디자인 파일의 리소스도 함께 보여줌
+- Assets panel의 우측 상단 책 모양 아이콘(Libraries)을 클릭하면 로컬 컴포넌트 배포 가능 → 다른 디자인 파일에서 동기화하여 사용 가능
+
 
