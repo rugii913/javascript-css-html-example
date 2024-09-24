@@ -384,4 +384,13 @@
   - 개발할 때 필요한 플러그인도 검색 가능
 - 개발 툴과 연동도 가능
 
+## 섹션 3. 기본 기능 이해와 활용
+
+### 단축키 쓰고 빠른 작업에 익숙해지기
+-  (cf.) Figma 메뉴 이름 옆에 각각의 단축키 표시되어 있음
+  - 강의 영상 하단에도 표출해둠
+  - 대체로 Mac의 command, option은 각각 Ctrl, Alt에 대응됨
+- Keyboard Shortcuts에서 여러 단축키를 확인할 수도 있음
+  - Figma 메뉴 → Help and account → Keyboard shortcuts\(단축키 ctrl + shift + / 혹은 ctrl + ?\)
+
 
