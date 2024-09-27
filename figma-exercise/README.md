@@ -393,4 +393,33 @@
 - Keyboard Shortcuts에서 여러 단축키를 확인할 수도 있음
   - Figma 메뉴 → Help and account → Keyboard shortcuts\(단축키 ctrl + shift + / 혹은 ctrl + ?\)
 
+### 그리기: 프레임 다루기
+- frame: 작업 영역을 의미 → Figma에서 UI로 인식되는 요소
+  - 단축키 f
+  - 드래그(혹은 클릭)으로 그리거나
+  - frame 도구 선택 후 오른쪽 패널에서 디바이스별로 미리 설정된 사이즈를 선택하여 생성 가능
+    - (cf.) 어떤 해상도로 작업할 지 팀에서 미리 기준 해상도를 논의하고, 이에 맞는 프레임을 선택해서 작업
+      - 작은 해상도로 작업한 후 Auto layout, constraints 기능 등을 활용하여 화면을 키울 수도 있음
+- element 위에 mouse over하면 canvas와 layers panel에서 파란색 테두리로 표시
+  - 클릭해서 선택하면 드래그로 element 사이즈를 조절할 수 있는 bounding box가 표시
+  - element의 이름을 더블 클릭하면 이름 변경 가능
+- element 복제
+  - (방법 1) alt + 드래그
+    - 드래그 시 정렬을 도와주는 붉은색 보조 그리드 표시
+  - (방법 2) ctrl + d → 이전 복제 작업이 없는 경우 기본 설정인 40px 간격으로 복제됨
+    - 이전 복제 작업이 있는 경우 이전 작업에서 사용한 간격대로 맞춰서 복제
+- 여러 element 선택
+  - shift 누른 상태로 element 클릭
+    - (cf.) element와 겹쳐져 있는 다른 element(ex. 하위 element)가 있는 경우 다른 element가 선택될 수 있으므로, element 이름을 클릭하는 것이 안전
+- 여러 element 선택한 상태에서 표시되는 붉은 bar와 circle
+  - element 사이에 있는 붉은 bar: mouse over하면 element 간 간격 확인 가능
+    - 드래그해서 간격 조절 가능
+    - 오른쪽 design panel에서도 조절 가능 \(\]|\[ 이렇게 생긴 부분\) - 숫자를 입력할 수도 있고, 드래그로 조절도 가능
+      - (cf.) 숫자들은 모두 계산 가능해서 70 - 30과 같은 표현식을 입력할 수도 있음
+  - element 안의 붉은 line circle: 드래그해서 element 간 간격을 유지한 채로 순서 변경 가능
+- element를 frame의 하위 요소로 만들기
+  - element를 frame 안 쪽 영억으로 드래그하면 frame에 파란 테두리 표시 → 이 때 드롭하면 드롭한 element가 해당 frame의 하위 요소가 됨
+    - 물론 layers panel에서 드래그해서 하위 요소로 만들 수도 있음
+    - (cf.) rectangle 같은 요소의 하위 요소로 다른 element를 넣을 수는 없음 - 하위 요소를 가질 수 있는 element는 section, frame, group 뿐
+
 
