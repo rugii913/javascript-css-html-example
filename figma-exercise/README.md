@@ -519,4 +519,94 @@
     - **ctrl을 누른 상태로 element에 mouse over**하면 파란 테두리가 활성화되는 것을 볼 수 있고
     - 이 때 클릭하면 해당 element를 선택할 수 있음
 
+### 속성 설정: Design panel에서 정렬, 좌표, 사이즈, R값 상세 설정 해보기
+- layer의 property를 canvas가 아니라 design panel에서 설정하기
+
+#### **Rectangle**\(다른 shape에서도 공통으로 사용할 수 있는 부분도 함께 설명\)
+- (cf.) design panel의 모든 수치들은 속성 이름 위에서 위에서 드래그해서 변경할 수도 있음
+- alignment 옵션
+  - 하나의 element를 선택했을 때의 alignment
+    - 해당 element(layer)를 감싸고 있는 부모 element를 기준으로 했을 때의 정렬을 의미
+    - 처음 세 가지는 가로 정렬
+      - align left(단축키 alt + a), align horizontal centers(단축키 alt + h), align right(alt + d)
+    - 그 다음 세 가지는 세로 정렬
+      - align top(단축키 alt + w), align vertical centers(단축키 alt + v), align bottom(alt + s)
+    - (cf.) left, right, top, bottom 정렬은 a, d, w, s로 기억하면 됨
+    - 마지막 버튼은 하나의 element만 선택했을 때는 비활성화
+  - 둘 이상의 element를 선택했을 때의 alignment
+    - 처음 여섯 가지 버튼이 부모 element에 대한 정렬이 아닌 선택된 elements들을 감싸고 있는 bounding box 테두리에 대한 정렬을 의미하게 됨
+      - 하나의 element를 클릭했을 때처럼 부모 element에 대해 정렬하기 위해선
+        - shift 혹은 alt를 누른 상태에서 각 정렬 버튼을 클릭
+        - 이 때 여러 element를 감싸는 bounding box 전체와 부모 element 간의 정렬이 됨
+    - 마지막 버튼은 선택된 elements의 간격에 대한 것
+      - tidy up(단축키 ctrl + alt + shift + t)은 셋 이상의 elements가 선택됐을 때만 활성화
+        - 적당히 알아서 정돈해줌
+        - bounding box 오른쪽 하단에 있는 ||| 이렇게 생긴 아이콘으로 canvas 화면에서도 tidy up은 가능
+      - distribute vertical spacing(단축키 alt + shift + v): 수직 간격을 동일하게 맞춤
+      - distribute horizontal spacing(alt + shift + h): 수평 간격을 동일하게 맞춤
+- X, Y: 해당 element를 감싸고 있는 부모 element 기준 좌표
+- W, H: 해당 element의 너비, 높이
+  - W, H 옆의 사슬 모양(Constrain proportions)이 활성화되어 있으면
+    - design panel 위에서 드래그했을 때 W, H 비율이 유지됨
+    - design panel의 수치를 입력했을 때도 W, H 비율이 유지됨
+    - 단 canvas에서 드래그해서 W, H 사이즈를 조절할 때는 비율이 유지되지 않음
+      - 이 때는 shift를 누르고 드래그해야 사이즈 비율을 유지시킴
+      - (cf.) 사이즈 뿐만 아니라 radius 등 여러 속성을 함께 맞춰 조절하려면
+        - Move(단축키 k) 툴이 아니라 Scale(단축키 k) 툴로 사이즈를 조절
+- 각도 모양(Rotation): element의 회전
+  - 음수값이 시계 방향 회전, 양수값이 반시계 방향 회전
+- 둥근 모서리 모양(corner radius): element의 모서리 둥근 정도 r값
+  - (cf.) corner radius property가 없는 shape도 있음
+  - 둥근 모서리 모양 오른쪽의 둥근 모서리 네 개 모양 버튼(Independent corners)
+    - rectangle의 경우 각 모서리 별로 radius를 다르게 줄 수 있음
+    - corner smoothing: 조금 더 부드러운 테두리 설정
+- Constraints → 추후 별도로 설명
+- Layer: layer의 blend 모드에 대한 설정 / 투명도 설정 / 가시성 설정
+  - layer blend 모드 → 여러 layer가 겹쳐 있을 때 겹친 부분의 색 표현에 대한 설정
+- Fill: element 안의 색을 설정
+  - 기본적으로 Hex를 사용
+    - 색을 클릭했을 때 나오는 color palette에서는 Hex 뿐만 아니라
+    - RGB, CSS, HSL, HSB 등 다양한 방식으로 색 설정 가능
+  - color palette에서 색 설정 시 네 가지 옵션
+    - Solid(단색), Gradient(그라디언트), Image(이미지), Video(영상)
+  - 하나의 element에 여러 color를 추가할 수 있음, 이 때는 순서 상 가장 위에 있는 색을 먼저 보여줌
+- Stroke: element의 테두리 색 설정
+  - 색을 설정하는 방법은 fill과 유사
+  - Inside, Center, Outside 옵션: shape 테두리의 어떤 부분에 색을 주는지 설정
+  - 테두리 두께 설정 가능
+  - rectangle의 경우 각 변마다의 테두리 설정 가능
+  - 추가 옵션 … 버튼(Advanced stroke)
+    - Stroke style: Solid, Dash, Custom
+      - dash인 경우 점선 크기(Dash), 점선 간격(Gap), 점선 끝 모양(Dash cap), 꺾인 부분에서 모양 처리(Join) 등 가능
+- Effect
+  - Inner shadow: object 안 쪽으로 그림자 넣기
+    - 왼쪽 해 모양 아이콘(Effect settings)에서 여러 값 조정 가능
+      - 그림자 위치, blur 값, 두꺼운 정도, 그림자 색 등
+  - Drop shadow(기본 설정): object 아래로 그림자 넣기
+    - Effect settings에서 여러 값 조정 가능
+      - 그림자 위치, blur 값, 두꺼운 정도, 그림자 색 등
+  - Layer blur: layer 자체를 blur 처리
+    - Effect settings에서 여러 값 조정 가능 blur 값 조정 가능
+  - Background blur: 해당 object에 투명도가 있는 경우 background로 아래에 깔린 object를 blur 처리
+    - Effect settings에서 여러 값 조정 가능 blur 값 조정 가능
+- Export
+  - 선택된 object를 여러 형태로 내보내기
+  - 배수, 파일 확장자 설정, 미리보기 가능
+
+#### **Ellipse**
+- ellipse가 arc가 됐을 때 start, sweep, ratio 조절 가능
+
+#### **Line, Arrow**
+- Start point와 End point 모양 설정 가능
+  - Start point는 드래그를 시작한 지점, End point는 드래그가 끝난 지점
+
+#### **Polygon**
+- count 조절 가능
+
+#### **Start**
+- count, ratio 조절 가능
+
+#### **세부 수정 모드**
+- 변 중간에 만들어진 point에 대해 r값 조정 가능
+
 
