@@ -422,4 +422,101 @@
     - 물론 layers panel에서 드래그해서 하위 요소로 만들 수도 있음
     - (cf.) rectangle 같은 요소의 하위 요소로 다른 element를 넣을 수는 없음 - 하위 요소를 가질 수 있는 element는 section, frame, group 뿐
 
+### 그리기: 툴바로 쉐입 그리고 캔버스에서 속성 바꿔보기 → shape tools
+
+#### **rectangle, ellipse**
+- rectangle, ellipse shape 그리기
+  - 툴을 선택하거나 단축키를 누른 상태로 canvas를 클릭하면 기본적으로 100×100의 shape가 만들어짐
+  - alt를 누른 상태로 드래그하면 드래그를 시작한 지점을 중심으로 두고 사이즈 조절 가능
+    - alt를 누르지 않고 드래그 하면 드래그를 시작한 지점은 왼쪽 상단의 bounding box가 됨
+  - shift를 누른 상태로 드래그하면 width와 height 길이가 같은 shape를 만들 수 있음
+  - alt, shift를 동시에 누른 상태로 드래그하면 당연하게도 드래그 시작 지점을 중심으로 하는 width, height가 같은 shape를 만들게 됨
+- rectangle → 단축키 r
+  - canvas 위에서 rectangle shape r값(corner radius) 조절
+    - 그려진 rectangle을 클릭해서 선택 후 bounding box 안 쪽에 mouse over하면 파란 line circle 표시
+      - (cf.) 적당히 확대된 상태여야 파란 line circle이 표시 됨
+    - 이 line circle을 움직여 rectangle의 r값 조절 가능
+  - canvas 위에서 rectangle shape rotation 조절
+    - 그려진 rectangle을 클릭해서 선택 후 bounding box 대각선 바깥 쪽에 mouse over하면 mouse pointer가 회전을 나타내는 표시로 바뀜
+    - 이 상태에서 드래그하여 rectangle의 rotation 값 조절 가능
+    - shift를 누르고 드래그 하면 15 degree 단위로 회전
+- ellipse → 단축키 o
+  - canvas 위에서 arc 형태 만들기
+    - 그려진 ellipse를 클릭해서 선택하면 shape의 오른쪽에 파란 line circle 표시
+      - (cf.) 적당히 확대된 상태여야 파란 line circle이 표시 됨
+    - 이 line circle을 드래그해서 ellipse를 arc 형태로 만들 수 있음 → 원형 그래프, 도넛 그래프 등을 표시할 때 사용
+      - 일단 arc 형태가 되면 line circle이 3개로 늘어남
+      - arc의 각도(sweep)을 조절하는 line circle 하나
+      - 도넛 모양처럼 만들 수 있는 ratio를 조절하는 line circle 하나
+      - arc가 시작되는 지점(start)을 조절하는 line circle 하나
+
+#### **line, arrow**
+- line → 단축키 l
+  - line 그리기
+    - 툴을 선택하거나 단축키를 누른 상태로 canvas에서 드래그
+      - 드래그 시작 지점이 start 위치, 드롭 지점이 end 위치가 됨
+      - (cf.) line의 경우 클릭만으로는 shape을 만들어주지 않음
+    - alt 누른 상태로 드래그하면 드래그 시작 지점이 line의 중간이 되고
+    - shift 누른 상태로 드래그하면 line의 canvas 위에서의 각도(rotation)를 45 degree 단위로 조절 가능
+    - 그려진 뒤 line의 bounding box를 드래그하여 width와 rotation 조절 가능
+- arrow → 단축키 shift + l
+  - line과 그리는 방법이 같음
+    - (cf.) arrow는 툴 선택 후 클릭 시 기본적으로 100×0인 shape를 생성해줌
+  - 다 그린 뒤에 end 기본적으로 end 위치에 화살표 모양이 생김
+- (cf.) line에는 height를 갖고 있지 않고 height 값은 0으로 고정
+  - arrow는 height를 갖고 있으나 기본적으로 0으로 시작되고, height 값이 있더라도 겉으로 큰 변화가 없음
+
+#### **polygon**
+- 단축키 없음
+- polygon 그리기
+  - 툴 선택 시 기본적으로 삼각형을 그림
+    - 툴 선택 후 클릭 시 기본적으로 100×100 크기의 삼각형을 생성
+    - alt 누른 상태로 드래그하면 드래그 시작 지점을 중심으로 한 삼각형을 그림
+    - shift 누른 상태로 드래그하면 정삼각형을 그림
+- polygon의 r값(corner radius)과 count
+  - polygon을 선택하고 영역 안 쪽에 mouse over하면 shape 안 쪽에 두 개의 line circle이 표시
+  - shape 안 쪽에 있는 line circle을 드래그하면 r값 조절 가능
+  - shape 모서리에 있는 line circle을 드래그하면 count(꼭지점 개수) 조절 가능
+    - 최소 3, 최대 60
+
+#### **star**
+- 단축키 없음
+- star 그리기
+  - 다른 shape와 유사함
+  - 툴을 선택하고 클릭할 경우 기본적으로 100×100 크기의 r값 0, ratio 38.2%, count 5인 star shape를 생성
+- star의 r값, count, ratio
+  - star를 선택하고 영역 안 쪽에 mouser over하면 shape 안 쪽에 세 개의 line circle이 표시
+  - shape 안 쪽에 r값을 line circle 하나
+  - shape의 들어간 모서리에 있는 ratio를 조절하는 line circle 하나
+    - 최소 0.1%, 최대 100%
+  - shape의 나온 모서리에 있는 count를 조절하는 line circle 하나
+    - 최소 3, 최대 60
+
+#### **도구 선택, 그리기, 속성 설정의 공통 사항**
+- shift를 누른 상태로 드래그하면 shape와 frame은 정다각형 요소로 그려짐
+- alt를 누른 상태로 드래그하면 드래그 시작 지점이 element의 중심이 됨
+- 세부 수정 모드
+  - shape를 더블 클릭하거나, shape를 선택한 상태에서 enter 입력
+    - (cf.) frame의 경우 frame을 선택한 상태로 enter을 입력하면 모든 하위요소를 선택함
+  - 세부 수정 모드에서 빠져나오려면
+    - esc 누르기
+    - shift + enter 누르기
+    - enter 누르기
+    - shape 바깥 쪽을 더블 클릭
+    - 상단 툴바의 Done 버튼 클릭
+  - 변 중간에 point 만들기("디자인 패널에서 정렬, 좌표, 사이즈, R값 상세 설정 해보기" 강의 중 내용)
+    - 모든 shape들은 세부 수정 모드에서 변 중간에 point를 찍을 수 있음
+      - 해당 point에 대한 r값은 Design panel에서 조절 가능
+  - 곡선 만들기 - ctrl(bend tool)과 alt를 활용("디자인 패널에서 정렬, 좌표, 사이즈, R값 상세 설정 해보기" 강의 중 내용)
+    - point를 선택한 상태에서 Bend 툴(단축키 ctrl)을 선택하면 해당 point의 양 쪽을 곡선으로 만들 수 있음
+    - 곡선 중간 point를 선택한 상태에서 alt를 누르고 곡률 point를 드래그하면 한 쪽의 곡률만 조절할 수 있음
+- deep select: frame 안의 element 선택하기
+  - Figma에서 mouse over했을 때 바로 선택할 수 있는 element는 최상위 frame의 바로 하위 element 뿐임
+    - (cf.) 최상위 frame도 단순히 mouse over로 선택할 수 없음
+      - 최상위 frame의 이름 쪽에 mouse over해야 파란 테두리가 활성화되는 것을 볼 수 있음
+    - (cf.) 다른 frame에 감싸져있지 않고, 최상위 frame 바로 하위에 있는 shape의 경우 바로 선택할 수 있음
+  - frame 안의 element 혹은 최상위 frame을 바로 선택하려면
+    - **ctrl을 누른 상태로 element에 mouse over**하면 파란 테두리가 활성화되는 것을 볼 수 있고
+    - 이 때 클릭하면 해당 element를 선택할 수 있음
+
 
