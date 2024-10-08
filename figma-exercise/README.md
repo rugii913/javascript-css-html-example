@@ -623,4 +623,66 @@
     - (cf.) 이미 속성을 복사한 상태라면 속성을 붙여넣을 layer 선택 후 ctrl + v로도 속성 붙여넣기 가능
   - (cf.) 서로 다른 shape이더라도 속성 복붙 시 공통된 layer property들이 복사됨
 
+### 그리기: 레이어 다루기
+- layer panel의 그림과 layer 이름으로 각 레이어를 식별 가능
+- 레이어 선택
+  - 방법
+    - panel에서 mouse over 하면 파란 테두리 표시(canvas에서 대응되는 layer에 파란 테두리 표시됨)
+    - 클릭해서 선택하면 선택된 layer가 panel에서 하늘색 면 표시(canvas에서 대응되는 layer 선택, ruler 쪽에도 크기와 위치 표시)
+      - (cf.) layer를 선택한 상태에서 tab을 누르면 layer panel에서 같은 층위에 있는 다음 layer가 선택됨
+- 레이어 이름 바꾸기
+  - 방법
+    - panel에서 layer 더블 클릭
+    - 우클릭 메뉴 Rename
+    - 단축키 ctrl + r
+- 레이어 숨기기
+  - 방법
+    - 우클릭 메뉴 Show/Hide
+    - 단축키 ctrl + shift + h
+  - 하위 element가 있는 경우 함께 숨김
+- 레이어 삭제하기
+  - 방법
+    - delete 키
+- 레이어 잠그기
+  - 방법
+    - layer panel의 특정 layer에 mouser over 하면 나타나는 자물쇠 표시 클릭
+    - 우클릭 메뉴 Lock/Unlock
+    - 단축키 ctrl + shift + l
+  - 하위 element가 있는 경우 함께 잠금
+  - layer panel에서 선택할 수 있지만, canvas에서는 선택 및 편집할 수 없는 상태가 됨
+- 레이어 순서 변경
+  - 방법
+    - layer panel의 특정 layer를 선택한 뒤 변경할 위치로 드래그
+    - 우클릭 메뉴 Bring to front로 맨 앞으로 보내기, Bring to back으로 맨 뒤로 보내기
+    - 단축키
+      - \] 맨 앞으로 보내기
+      - \[ 맨 뒤로 보내기
+      - ctrl + \] 순서 하나만 앞으로 보내기
+      - ctrl + \[ 순서 하나만 뒤로 보내기
+  - 마우스 drop 예정 위치에 따른 layer가 위치할 순서에 굵은 검은선 표시됨
+- 레이어를 프레임 안으로 집어 넣기
+  - 방법
+    - layer panel의 특정 layer를 선택한 뒤 변경할 위치로 드래그
+      - 기본적으로 레이어 순서 변경과 방법이 같음
+  - 드롭할 위치에 따라 어떤 계층으로 옮겨질지 달라짐
+    - 여러 계층이 있는 프레임 계층의 경우 마우스 드롭 위치가 왼쪽이 될 수록 상위 계층, 오른쪽이 될 수록 하위 계층에 속하게 됨
+  - 마우스 drop 예정 위치에 따른 layer가 속할 frame에 파란 테두리 표시됨
+- 레이어 복제
+  - 방법
+    - layer panel에서 alt 누른 채로 드래그
+      - 복제 후 속할 계층까지 정할 수 있음
+      - 복제된 layer의 canvas상 위치는 원본 layer의 위치와 같음
+    - 단축키 ctrl + d
+  - 복붙과 비교
+    - ctrl + d를 이용한 복제의 경우 같은 층위의 앞 순서에 복제된 레이어가 위치
+      - canvas상에서는 원본 layer와 완전히 같은 위치
+    - alt 드래그를 이용한 복제의 경우 layer panel에서 층위, 순서를 조정할 수 있음
+      - 하지만 여전히 canvas상에서는 원본 layer와 완전히 같은 위치
+    - 복붙의 경우
+      - 다른 frame 안에서 붙여넣기 하면
+      - canvas 상에서의 위치가 달라짐
+        - 원본 layer의 위치값(X, Y)까지 알아서 보존된다고 보면 될 것
+        - 원본 layer의 위치값이 보존되므로 canvas 상에서의 위치는 달라질 것
+- 그 외 layer panel에서 layer 우클릭 메뉴는 차차 알아볼 것
+
 
