@@ -609,4 +609,18 @@
 #### **세부 수정 모드**
 - 변 중간에 만들어진 point에 대해 r값 조정 가능
 
+### 속성 설정: 오브젝트 복붙 vs. 속성 복붙
+- object 자체를 복사
+  - ctrl + c, ctrl + v(원본 object 위치에 그대로 복사)
+  - alt + 드래그
+  - ctrl + shift + v(선택된 element 위에 복사)
+    - 선택된 layer와 같은 층위로 선택된 layer의 시작 X, Y 위치에 복사됨
+    - 선택된 layer가 없는 경우 최상위 계층으로 page에 복사
+  - (cf.) 레이어 복제 단축키 ctrl + d(위 그리기: 프레임 다루기 부분 참고)
+- layer의 속성만 복사
+  - 속성을 복사할 layer 위에서 우클릭 → Copy/Paste as → Copy properties, 속성을 붙여넣을 layer 위에서 우클릭 → Copy/Paste as → Paste properties
+  - 속성을 복사할 layer 선택 후 ctrl + alt + c, 속성을 붙여넣을 layer 선택 후 ctrl + alt + v
+    - (cf.) 이미 속성을 복사한 상태라면 속성을 붙여넣을 layer 선택 후 ctrl + v로도 속성 붙여넣기 가능
+  - (cf.) 서로 다른 shape이더라도 속성 복붙 시 공통된 layer property들이 복사됨
+
 
