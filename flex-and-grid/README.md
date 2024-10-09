@@ -229,6 +229,19 @@
   - flex container의 align-items의 기본값이 stretch인 점을 이용하여
     - flex container의 height를 조절하는 것만으로 flex item의 height까지 조절할 수 있음
 
+### Flex UI \#3 - 불릿 리스트
+- cf. BEM(Block Element Modifier) - 클래스 이름을 짓는 CSS 방법론 중 하나
+  - xxx__xxx--xxx와 같은 형식이 됨
+  - 이 강의에서는 사용하지 않고 단순히 -로 연결함
+- `<li>`의 bullet을 가상 요소 ::before로 넣기
+  - reset css 등으로 초기화된 `<li>`의 bullet을 표현할 때 가상 요소 ::before를 사용할 수 있음
+  - [MDN - Pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+- `<li>`의 텍스트에 들여쓰기 효과 주기
+  - `<li>`를 flex container로 만들면
+  - ::before로 넣은 가상 요소와 `<li>` 내부의 text가 각각 flex item이 되어 고유한 영역을 가짐
+    - 이에 따라 들여쓰기 효과가 발생함
+- cf. <https://copychar.cc> - 특수문자 복사해서 사용할 수 있는 사이트
+
 ## Flex로 반응형 페이지 만들기
 
 ## Grid 핵심 정리
