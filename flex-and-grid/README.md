@@ -211,6 +211,24 @@
       - [기타 블로그 - CSS 플렉스박스(flex) flex-grow와 flex-shrink 속성](https://velog.io/@dlwoxhd/CSS-플렉스박스flex-flex-grow와-flex-shrink-속성)
       - [MDN - Controlling ratios of flex items along the main axis](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis)
 
+### Flex UI \#2 - 유연한 검색창
+- 검색창의 경우 `<input>`의 type="search"로 작성하는 것이 좋음
+  - type="text"와 외관은 비슷한데, 모바일 기기의 가상 키보드에서 검색 버튼 등이 활성화됨
+    - cf. 유사하게 email을 입력하는 `<input>` 태그는 type="email"로 작성
+- CSS의 attribute selector
+  - class가 없으나 attribute가 있는 요소를 선택할 때 사용 가능
+  - [MDN - Attribute selectors 참고](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
+- `<input>`의 font-size는 기본적으로 rem과 다름 - Chrome, Edge의 경우 13.3333px
+  - cf. type="text"든 "search"든 "submit"이든 마찬가지
+  - 기본적으로 fz: inherit이 아니라고 보면 됨
+  - 다른 요소와 font-size를 맞추려면 font-size: 1rem; 과 같은 방식으로 맞춰야 함
+  - 이 때 `<input>` fz를 키우면 height도 맞춰서 커짐
+    - 스타일 줄 때 유의해야 함
+- flex container의 align-items: stretch를 이용해 flex item의 heigth 조절하기
+  - 직접 height, padding을 줄 수도 있지만
+  - flex container의 align-items의 기본값이 stretch인 점을 이용하여
+    - flex container의 height를 조절하는 것만으로 flex item의 height까지 조절할 수 있음
+
 ## Flex로 반응형 페이지 만들기
 
 ## Grid 핵심 정리
