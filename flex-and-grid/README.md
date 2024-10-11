@@ -242,6 +242,20 @@
     - 이에 따라 들여쓰기 효과가 발생함
 - cf. <https://copychar.cc> - 특수문자 복사해서 사용할 수 있는 사이트
 
+### Flex UI \#4 - 메시지 리스트
+- (목적) 이미지 쪽 덩어리와 메시지 쪽 덩어리를 구분하여 사진 쪽 덩어리의 너비 고정시키기
+- `<img>`가 `<figure>`의 background로 이미지 넣기 → 간편하게 이미지의 위치 처리하기
+  - (이유) 크기 비율이 각기 다른 이미지를 `<img>`로 직접 처리하면 위치 등을 조정하기 까다로운 경우가 많음
+    - `<figure>`의 background로 이미지를 처리하면 상대적으로 간단해질 때가 있음
+  - `<figure>`의 inline style로 background-image를 넣기
+    - 이런 경우 이미지를 서버 등을 통해 동적으로 받아오는 경우가 많은데
+      - 이 때 inline style로 background-image를 넣으면 편리
+    - ex. `<figure style="background-image: url(...);">`
+    - 다만 이 경우에도 이미지의 position, 크기 등 스타일은 inline이 아닌 css 파일 등으로 지정
+- background-image를 넣은 `<figure>`을 flex item으로 만들었을 때 찌그러지는 현상 해결
+  - `<figure>`가 flex-shrink: 0; 부여
+- cf. rem을 사용할 때와 em을 사용할 때를 구분하여 의도를 갖고 사용할 것
+
 ## Flex로 반응형 페이지 만들기
 
 ## Grid 핵심 정리
