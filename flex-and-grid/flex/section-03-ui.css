@@ -93,3 +93,16 @@
   background-position: top -5px right -15px; /* 강의에서는 top 사용, 안전하게는 center 사용 */
   background-size: 150%;
 }
+
+/* friend list */
+/* .user-photo는 위 그대로 사용 */
+.friend-item {
+  align-items: center;
+}
+
+.user-description {
+  /* 보통 아래 세 가지가 세트로 묶여다님 */
+  overflow: hidden; /* 이 부분이 없으면 좌우 스크롤이 생김 */
+  text-overflow: ellipsis; /* 이 부분이 없으면 ... 처리가 안 됨 */
+  white-space: nowrap; /* 이 부분이 없으면 <p>가 차지하는 영역의 height가 증가하는 것을 막을 수 없음 */
+}
