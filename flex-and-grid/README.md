@@ -263,6 +263,13 @@
     - text-overflow: ellipsis; → 이 부분이 없으면 ... 처리가 안 됨
     - white-space: nowrap; → 이 부분이 없으면 <p>가 차지하는 영역의 height가 증가하는 것을 막을 수 없음
 
+### Flex UI \#6 - 모달
+- 뷰포트 크기에 상관 없이 한 가운데에 있는 모달 만들기
+  - modal의 position은 fixed 또는 absolute, 여기서는 fixed를 사용함
+  - 여기서는 fixed를 사용함
+    - left: 0; right: 0; top: 0; bottom: 0;
+  - modal의 display를 flex로 하고 jcc(justify-content: center;), aic(align-items: center;)
+
 ## Flex로 반응형 페이지 만들기
 
 ## Grid 핵심 정리

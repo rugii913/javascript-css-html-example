@@ -106,3 +106,23 @@
   text-overflow: ellipsis; /* 이 부분이 없으면 ... 처리가 안 됨 */
   white-space: nowrap; /* 이 부분이 없으면 <p>가 차지하는 영역의 height가 증가하는 것을 막을 수 없음 */
 }
+
+/* modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* 경우에 따라 absolute를 사용할 수도 있음 */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dialog {
+  width: 50vw;
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+}
