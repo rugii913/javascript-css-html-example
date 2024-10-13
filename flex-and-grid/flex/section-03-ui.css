@@ -126,3 +126,27 @@
   border-radius: 1em;
   background: white;
 }
+
+/* card list */
+.card-item {
+  margin-bottom: 2rem;
+}
+
+.card-image {
+  height: 0;
+  padding-bottom:60%;
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-image img {
+  display: none;
+}
+
+.card-description {
+  padding: 1em;
+  background: gray;
+}
+

@@ -270,6 +270,31 @@
     - left: 0; right: 0; top: 0; bottom: 0;
   - modal의 display를 flex로 하고 jcc(justify-content: center;), aic(align-items: center;)
 
+### Flex UI \#7 - 카드 리스트
+- 여기서도 이미지를 삽입할 때 `<img>` 대신 `<figure>`의 background를 사용
+  - 이미지의 너비, 비율 등 형태에 상관 없이 쉽게 컨트롤하기 위함
+  - cf. 위 메시지 리스트에서의 작업과 마찬가지로 서버에서 불러오는 작업을 편리하게 하기 위해
+    - 이미지의 url만은 inline css로 삽입
+  - `<figure>`의 background-image에 처음으로 값을 주게 되면
+    - 기본적으로 `<figure>`는 display: block;이고,
+    - background-repeat의 기본값은 repeat이므로
+      - cf. [MDN - background-reapeat](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat#formal_definition)
+    - 뷰포트의 길이만큼 이미지가 반복
+  - 가로 세로 비율을 유지해주는 반응형 박스를 만들기 위해 padding-bottom을 사용하여 박스 모델에 height 값을 부여
+    - ex. height: 0; padding-bottom: 60%;
+      - 이렇게 작성한 경우, 박스 모델의 content의 height는 0으로 주고,
+      - 단지 박스를 감싼 요소의 width에 따라서 박스 모델의 padding을 포함한 height가 결정되도록 한 것
+    - \(동작 설명\) padding: 100%는 안의 box-model의 content가 최대한 늘어날 수 있는 width을 의미
+      - padding을 % 값으로 줄 경우, 세로 padding이든 가로 padding이든 상관 없이 width를 기준으로 계산됨
+      - cf. [MDN - padding-top](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top#formal_definition)
+        - "Formal definition → Percentages refer to the width of the containing block"
+  - background-image의 크기 및 반복 설정
+    - background-repeat: no-repeat; background-position: center; background-size: cover;
+    - background-size: cover; 덕분에 원본 이미지의 너비, 비율에 상관 없이 박스를 보기 좋게 채움
+- 뷰포트 너비에 따라 1단, 2단, 3단 카드 리스트가 되도록 반응형 작업
+  - 1단 작업부터 시작하면 우선 flex는 고려하지 않아도 됨
+- 각 행 내의 card-item의 설명 부분의 높이는 같고, 서로 다른 행의 설명 부분의 높이는 다를 수 있게 만들기
+
 ## Flex로 반응형 페이지 만들기
 
 ## Grid 핵심 정리
