@@ -293,6 +293,17 @@
     - background-size: cover; 덕분에 원본 이미지의 너비, 비율에 상관 없이 박스를 보기 좋게 채움
 - 뷰포트 너비에 따라 1단, 2단, 3단 카드 리스트가 되도록 반응형 작업
   - 1단 작업부터 시작하면 우선 flex는 고려하지 않아도 됨
+  - 600px부터 2단으로 보이게 하기 → 여기부터 flex 필요
+    - 1단 작업부터 시작했으므로 @media (min-width: ...) 사용
+    - 우선 container인 .card-list에 display: flex; 부여
+    - 2단이 되도록 하기 위해
+      - container에 flex-wrap: wrap; 설정으로 공간이 모자라면 다음 행으로 떨어지도록 처리하고
+      - item들의 width를 container width의 절반으로 설정 및 좌우 padding 설정 → width: 50% padding: 0 1rem;
+        - cf. item들의 width를 container width의 절반 값보다 작게하고(ex. width: 46%)
+          - justify-content: space-between;으로 한 행의 item끼리 살짝 떨어지도록 할 경우
+          - 2단일 때는 괜찮아보이지만 3단일 때 가운데가 비는 문제가 생김
+      - 마지막으로 container 전체의 좌우 margin이 item의 좌우 padding과 크기가 같은 음수값이 계산되도록 하여
+        - 각 행이 container를 꽉 채운 모습이 되게 만듦
 - 각 행 내의 card-item의 설명 부분의 높이는 같고, 서로 다른 행의 설명 부분의 높이는 다를 수 있게 만들기
 
 ## Flex로 반응형 페이지 만들기

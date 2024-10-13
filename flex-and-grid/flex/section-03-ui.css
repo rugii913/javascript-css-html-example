@@ -150,3 +150,17 @@
   background: gray;
 }
 
+@media (min-width: 600px) {
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */ /* space-between을 사용할 경우 3단 처리했을 때 문제가 생김 */
+    margin: 0 -1rem;
+  }
+
+  .card-item {
+    /* width: 46%; */
+    width: 50%;
+    padding: 0 1rem;
+  }
+}
