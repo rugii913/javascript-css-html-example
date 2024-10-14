@@ -302,8 +302,12 @@
         - cf. item들의 width를 container width의 절반 값보다 작게하고(ex. width: 46%)
           - justify-content: space-between;으로 한 행의 item끼리 살짝 떨어지도록 할 경우
           - 2단일 때는 괜찮아보이지만 3단일 때 가운데가 비는 문제가 생김
-      - 마지막으로 container 전체의 좌우 margin이 item의 좌우 padding과 크기가 같은 음수값이 계산되도록 하여
+      - 마지막으로 container 전체의 좌우 margin이
+        - item의 좌우 padding과 크기가 같은 음수값이 계산되도록 하여 ex. margin: 0 -1rem;
         - 각 행이 container를 꽉 채운 모습이 되게 만듦
+  - 1200px부터 3단으로 보이게 하기
+    - 위처럼 작업했다면 단순히 width만 33.33333%와 같이 설정
+    - 만약 음수 margin를 주지 않고 calc()를 사용한다면 좀 더 복잡해질 수 있음
 - 각 행 내의 card-item의 설명 부분의 높이는 같고, 서로 다른 행의 설명 부분의 높이는 다를 수 있게 만들기
 
 ## Flex로 반응형 페이지 만들기
