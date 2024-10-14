@@ -166,3 +166,9 @@
     /* padding: 0 1rem; */
   }
 }
+
+@media (min-width: 1200px) {
+  .card-item {
+    width: calc((100% - 2 * (2rem)) / 3);
+  }
+}
