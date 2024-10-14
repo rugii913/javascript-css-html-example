@@ -308,6 +308,8 @@
   - 알아서 늘어나게? → flex-grow 사용
   - 각 .card-item 요소들의 박스 모델의 height는 각 행에서 가장 큰 박스의 height로 맞춰짐을 활용
     - .card-item 자체를 flex container로 사용
+- 음수 margin을 사용했을 때 발생하는 가로 스크롤 해결
+  - html container 역할 요소로 감싼 후 overflow-x: hidden; 부여
 
 ## Flex로 반응형 페이지 만들기
 
