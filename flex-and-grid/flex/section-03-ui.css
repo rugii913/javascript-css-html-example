@@ -155,20 +155,20 @@
     display: flex;
     flex-wrap: wrap;
     /* justify-content: space-between; */ /* space-between을 사용할 경우 3단 처리했을 때 문제가 생김 */
-    margin: 0 -1rem;
-    /* column-gap: 2rem; */
+    /* margin: 0 -1rem; */
+    column-gap: 2rem;
   }
 
   .card-item {
     /* width: 46%; */
-    width: 50%;
-    /* width: calc(50% - (2rem) / 2); */
-    padding: 0 1rem;
+    /* width: 50%; */
+    width: calc(50% - (2rem) / 2);
+    /* padding: 0 1rem; */
   }
 }
 
 @media (min-width: 1200px) {
   .card-item {
-    width: calc(100% / 3);
+    width: calc((100% - 2 * (2rem)) / 3);
   }
 }
