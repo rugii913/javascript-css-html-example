@@ -129,6 +129,8 @@
 
 /* card list */
 .card-item {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 2rem;
 }
 
@@ -146,6 +148,7 @@
 }
 
 .card-description {
+  flex: 1 1 auto; /* flex: auto;라고만 해도 동작하긴 함 */
   padding: 1em;
   background: gray;
 }

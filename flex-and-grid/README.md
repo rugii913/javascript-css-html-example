@@ -305,6 +305,9 @@
       - 마지막으로 container 전체의 좌우 margin이 item의 좌우 padding과 크기가 같은 음수값이 계산되도록 하여
         - 각 행이 container를 꽉 채운 모습이 되게 만듦
 - 각 행 내의 card-item의 설명 부분의 높이는 같고, 서로 다른 행의 설명 부분의 높이는 다를 수 있게 만들기
+  - 알아서 늘어나게? → flex-grow 사용
+  - 각 .card-item 요소들의 박스 모델의 height는 각 행에서 가장 큰 박스의 height로 맞춰짐을 활용
+    - .card-item 자체를 flex container로 사용
 
 ## Flex로 반응형 페이지 만들기
 
