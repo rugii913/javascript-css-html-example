@@ -314,9 +314,15 @@
 ## Flex로 반응형 페이지 만들기
 - 이미 만들어놓은 UI를 조합하여 반응형 페이지 만들기
 
-### Flex 반응형 페이지 Step 1
+### Flex 반응형 페이지 Step 1 - 레이아웃 고려 마크업
 - 레이아웃 영역 구분하여 미리 생각하기 - 헤더, 메뉴, 왼쪽 오른쪽 사이드바, 메인 컨텐츠 영역, 푸터 등
-- 마크업 진행
+- 만들어 놓은 요소들을 기반으로 마크업 진행
+
+### Flex 반응형 페이지 Step 2 - 1단 스타일 작업
+- 검색바의 input의 width를 조정할 때
+  - input은 이미 flex item이고 flex container의 width에 따라 item의 width로 바뀔 수 있으므로
+  - item인 input의 width를 직접 조정하기보다는 container인 form의 width를 조정하여 간접적으로 input의 width를 조정
+- 보통 요소 간 세로 간격을 줄 때는 margin-bottom을 주는 게 더 보기 좋을 때가 많음
 
 ## Grid 핵심 정리
 

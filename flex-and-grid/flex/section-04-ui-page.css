@@ -1,2 +1,48 @@
 /* 페이지 골격을 잡는 CSS */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 1rem;
+}
 
+/* cf. flex item이 두 개만 있을 때에는 .header에 jcsb 대신 item에 mlauto를 줘도 같은 UI를 볼 수 있음 */
+/* .search-form { margin-left: auto; } */
+.search-form {
+  width: 300px;
+  max-width: 60%;
+}
+
+.primary {
+  padding: 1rem;
+}
+
+.secondary {
+  padding: 1rem;
+}
+
+.secondary-a {
+  background: #FFF;
+}
+
+.secondary-a>.info-list {
+  margin-bottom: 2rem;
+}
+
+.secondary-a>.user-list {
+  margin-bottom: 2rem;
+}
+
+.secondary-b {
+  background: #666;
+}
+
+.secondary-b>.user-list {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+}
