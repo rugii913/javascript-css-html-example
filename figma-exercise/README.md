@@ -685,4 +685,51 @@
         - 원본 layer의 위치값이 보존되므로 canvas 상에서의 위치는 달라질 것
 - 그 외 layer panel에서 layer 우클릭 메뉴는 차차 알아볼 것
 
+### 그리기: 프레임과 그룹의 차이 알아보기
+- 간단한 설명
+  - frame은 영역, group은 묶음
+- 단축키
+  - frame: 프레임으로 묶을 object들을 선택한 뒤 ctrl + alt + g
+  - group: 그룹으로 묶을 object들을 선택한 위 ctrl + g
+- 차이점
+  - (1) 최상위 layer일 경우 frame은 canvas에서 이름이 표시되지만, group은 최상위 layer이더라도 이름이 표시되지 않음
+    - frame만 개별적인 속성을 갖는다는 의미 → frame은 영역이라는 기능을 가짐
+    - group은 단순하게 여러 object들을 묶어준 layer 계층일 뿐임
+  - (2) 사이즈 조절 시(선택 후 드래그 혹은 design panel 이용한 경우 모두 같음) 하위 layer의 사이즈 조절 여부
+    - frame 영역의 사이즈를 조절하더라도, frame의 하위 layer 사이즈는 변동 없음
+    - group 영역의 사이즈를 조절하면, group의 하위 layer 사이즈가 group 영역 사이즈(및 비율) 변경을 따라감
+  - (3) 요소 없이 생성 가능 여부
+    - frame은 요소를 묶기 전 하위 요소 없는 frame을 먼저 생성 가능
+    - group은 요소 없이 생성 불가능
+      - group은 기능을 하거나 속성이 있는 요소가 아니기 때문
+  - (4) canvas에서 다른 object를 해당 영역으로 드래그했을 때 하위 요소가 되는지 여부
+    - frame 영역으로 다른 object를 드래그했을 때
+      - frame에 파란 테두리가 표시되며
+      - layer panel에서 해당 frame의 하위 요소로 layer 위치가 변경
+    - group 영역으로 다른 object를 드래그해도 group의 하위로 layer 위치가 변경되지 않음
+    - (cf.) 그룹에 속하지 않은 object를 group으로 묶고 싶다면 layer panel에서 드래그해야 함
+  - (5) 기존에 점유하던 영역 밖의 object를 하위로 들여왔을 때 영역 사이즈의 변화
+    - frame 영역 밖의 object를 frame 하위로 들여와도 frame 영역 사이즈는 그대로(bounding box가 그대로)
+    - group 영역 밖의 object를 layer panel에서 group 하위로 들여오면 group 영역이 들여온 object까지 포함하도록 영역 사이즈가 커짐(bounding box 늘어남)
+      - group은 하위 여러 요소를 묶어둔 개념이기 때문
+    - (cf.) frame 영역 사이즈를 frame 하위의 모든 element를 포함하도록 조절하려면
+      - frame을 선택한 상태로 design panel에서 Resize to fit 버튼(중앙을 향하는 대각선 화살표 네개 버튼) 클릭
+      - 단축키 ctrl + alt + shift + r
+    - (cf.) 하위 element 중 frame 영역 사이즈를 벗어난 부분을 보이지 않게 하고 싶다면
+      - design panel에서 Clip content 클릭
+  - (6) layer에 fill로 색을 넣는다는 것의 개념
+    - frame 자체가 속성을 가지므로 frame 자체가 fill 색상을 가질 수 있음
+      - 하위 element의 fill들에는 영향이 없음
+    - group 자체는 fill을 가질 수 없음
+      - group을 선택했을 때 design panel에서 보이는 fill은 각 직속 하위 element의 fill을 의미
+      - group을 선택하고 fill 색상을 변경하면 모든 직속 하위 element의 fill이 변경됨
+        - 결국 개별 element의 묶음일 뿐이라는 것
+  - (?) canvas에서 layer를 선택하기
+    - frame의 경우 frame 자체가 속성이 있으므로 하위 element 사이의 빈 것처럼 보이는 공간을 클릭해도 선택됨
+    - group의 경우 group 자체는 속성이 없으며, 단지 하위 개별 element를 묶어놓은 것일 뿐이므로
+      - 하위 element 사이의 빈 공간은 정말로 빈 공간임 → 빈 공간을 클릭해서 선택할 수 없음
+      - canvas에서 group을 선택하려면 하위 element를 클릭해야함
+        - ctrl를 누른 상태가 아니라면 canvas에서 하위 element에 mouse over 했을 때 group 전체에 파란색 테두리가 표시됨을 확인할 수 있음
+- frame으로 감싸야 하는 부분을 group으로 묶었을 때 발생하는 문제는 아래 \"\[예제 실습\] 프레임과 그룹을 적용했을 때의 차이점 체험하기\"에서 다룸
+
 
