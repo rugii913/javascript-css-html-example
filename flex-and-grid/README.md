@@ -324,6 +324,16 @@
   - item인 input의 width를 직접 조정하기보다는 container인 form의 width를 조정하여 간접적으로 input의 width를 조정
 - 보통 요소 간 세로 간격을 줄 때는 margin-bottom을 주는 게 더 보기 좋을 때가 많음
 
+### Flex 반응형 페이지 Step 3 - CSS로 모달 열고 닫기 구현
+- 모달 열고 닫기를 CSS로 구현
+  - `<input>`의 id와 `<label>`의 for를 같게 맞추면
+    - label을 클릭해도 input이 동작하는 것을 활용
+  - 형제 결합자 ~ 이용(cf. +는 인접 형제 결합자로 바로 다음 형제 요소만 선택)
+  - ex. #modal-switch:checked~.modal
+  - 참고
+    - [MDN - Subsequent-sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator)
+    - [MDN - Next-sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator)
+
 ## Grid 핵심 정리
 
 ## Grid로 반응형 페이지 만들기
