@@ -88,3 +88,45 @@ label[for="modal-switch"]>span {
   opacity: 0;
   top: 0; /* top: 0;이 아닌 경우 크롬에서 모달이 화면 하단에 위치하는 문제 있음 */
 }
+
+@media (min-width: 1024px) {
+  .page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header {
+    width: 100%;
+  }
+  .menu {
+    width: 100%;
+  }
+  .secondary {
+    width: 20%;
+  }
+  .secondary-a {
+    order: 1;
+  }
+  .secondary-b {
+    order: 3;
+  }
+  .primary {
+    order: 2;
+    width: 60%;
+  }
+  .footer {
+    order: 4;
+    border-top: 1px solid lightgray;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1400px) { /* 사이드바(.secondary)가 일정 크기 이상으로는 커지지 않게 하기 위함 */
+  .primary {
+    width: calc(100% - 600px); /* 이렇게 calc로 계산하는 방법도 가능 */
+    /* 아래처럼 flex-grow를 사용할 수 있을 것 같아 보이나, 가끔 예상치 못하게 동작하는 구간이 있으므로 width를 사용하는 것이 안전 */
+    /* flex: 1 1 auto; */ /* 여기서는 flex-grow: 1;, flex: auto;와 효과가 같음 */
+  }
+  .secondary {
+    width: 300px;
+  }
+}

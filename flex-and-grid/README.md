@@ -334,6 +334,17 @@
     - [MDN - Subsequent-sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator)
     - [MDN - Next-sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator)
 
+### Flex 반응형 페이지 Step 4 - flex를 활용한 반응형 사이드바 구현
+- 반응형 → @media (min-width: ...) 사용
+- 굳이 감싸는 container를 더 만들지 않고 flex를 사용해서 배치 가능
+  - flex이므로 우선 축의 방향부터 정하기
+  - flex-wrap: wrap;일 때 flex item의 크기가 container를 벗어나면 아래로 떨어지는 특성을 활용
+  - **폭이 정해진 item들은 flex-grow보다 width를 사용하는 편이 훨씬 나음**
+  - flex item에게 부여할 수 있는 order 속성을 활용하여 item 간의 순서 변경
+    - cf. 같은 flex container에 있는 다른 item들에 order를 명시하지 않으면 order: 0;이 됨에 유의
+- (column 같은 느낌을 주는 레이아웃) width가 정해진 flex item들을 배치하는 경우, flex-grow보다 width를 사용하는 게 안전한 경우가 있음
+  - 반면 애초에 유연한 너비를 갖는 flex item들을 배치하는 경우, flex-grow를 사용하는 것이 편리할 수 있음
+
 ## Grid 핵심 정리
 
 ## Grid로 반응형 페이지 만들기
