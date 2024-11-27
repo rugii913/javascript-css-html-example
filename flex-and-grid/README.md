@@ -192,7 +192,158 @@
 
 ## Flex UI 만들기
 
+### Flex UI \#1 - 메뉴
+- (cf.) rem과 em의 사용
+  - font-size는 root를 따라가도록 rem 사용
+  - padding은 현재 font-size에 비례하도록 em 사용
+- width가 있을 때의 flex-shrink
+  - 메뉴 예제에서 width 25%, flex-basis auto(기본값)인 상태에서 flex-shrink 1(기본값)이므로
+    - hover 시 한 item의 width를 늘린다면, 다른 item들은 알아서 shrink
+      - 이는 flex-wrap: nowrap 기본값의 영향도 있음
+  - 추가 참고 자료
+    - [MDN - CSS Flexible Box Layout \> flexbox의 기본 개념](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+    - [기타 블로그 - CSS flexbox: flex-item의 크기 조절](https://seukjjang.tistory.com/6)
+    - [기타 블로그 - \[CSS\] Flexbox 크기 제어 전략: flex-basis, flex-grow, flex-shrink, width, max-width, min-width](https://dev-chim.tistory.com/entry/CSS-Flexbox-flex-basis-width)
+    - [기타 블로그 - ](https://choar816.tistory.com/119)
+      - Item의 content를 변화시키지 않을 때까지만 줄어든다고 함(디폴트로 min-width: auto, min-height: auto)
+        - content까지 무시하고 줄어들게 하려면 overflow를 적절히 설정
+    - flex-shirink의 자세한 계산 참고 - container의 렌더링 가능한 부분을 넘어선 크기가 기준
+      - [기타 블로그 - CSS 플렉스박스(flex) flex-grow와 flex-shrink 속성](https://velog.io/@dlwoxhd/CSS-플렉스박스flex-flex-grow와-flex-shrink-속성)
+      - [MDN - Controlling ratios of flex items along the main axis](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis)
+
+### Flex UI \#2 - 유연한 검색창
+- 검색창의 경우 `<input>`의 type="search"로 작성하는 것이 좋음
+  - type="text"와 외관은 비슷한데, 모바일 기기의 가상 키보드에서 검색 버튼 등이 활성화됨
+    - cf. 유사하게 email을 입력하는 `<input>` 태그는 type="email"로 작성
+- CSS의 attribute selector
+  - class가 없으나 attribute가 있는 요소를 선택할 때 사용 가능
+  - [MDN - Attribute selectors 참고](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
+- `<input>`의 font-size는 기본적으로 rem과 다름 - Chrome, Edge의 경우 13.3333px
+  - cf. type="text"든 "search"든 "submit"이든 마찬가지
+  - 기본적으로 fz: inherit이 아니라고 보면 됨
+  - 다른 요소와 font-size를 맞추려면 font-size: 1rem; 과 같은 방식으로 맞춰야 함
+  - 이 때 `<input>` fz를 키우면 height도 맞춰서 커짐
+    - 스타일 줄 때 유의해야 함
+- flex container의 align-items: stretch를 이용해 flex item의 heigth 조절하기
+  - 직접 height, padding을 줄 수도 있지만
+  - flex container의 align-items의 기본값이 stretch인 점을 이용하여
+    - flex container의 height를 조절하는 것만으로 flex item의 height까지 조절할 수 있음
+
+### Flex UI \#3 - 불릿 리스트
+- cf. BEM(Block Element Modifier) - 클래스 이름을 짓는 CSS 방법론 중 하나
+  - xxx__xxx--xxx와 같은 형식이 됨
+  - 이 강의에서는 사용하지 않고 단순히 -로 연결함
+- `<li>`의 bullet을 가상 요소 ::before로 넣기
+  - reset css 등으로 초기화된 `<li>`의 bullet을 표현할 때 가상 요소 ::before를 사용할 수 있음
+  - [MDN - Pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
+- `<li>`의 텍스트에 들여쓰기 효과 주기
+  - `<li>`를 flex container로 만들면
+  - ::before로 넣은 가상 요소와 `<li>` 내부의 text가 각각 flex item이 되어 고유한 영역을 가짐
+    - 이에 따라 들여쓰기 효과가 발생함
+- cf. <https://copychar.cc> - 특수문자 복사해서 사용할 수 있는 사이트
+
+### Flex UI \#4 - 메시지 리스트
+- (목적) 이미지 쪽 덩어리와 메시지 쪽 덩어리를 구분하여 사진 쪽 덩어리의 너비 고정시키기
+- `<img>`가 `<figure>`의 background로 이미지 넣기 → 간편하게 이미지의 위치 처리하기
+  - (이유) 크기 비율이 각기 다른 이미지를 `<img>`로 직접 처리하면 위치 등을 조정하기 까다로운 경우가 많음
+    - `<figure>`의 background로 이미지를 처리하면 상대적으로 간단해질 때가 있음
+  - `<figure>`의 inline style로 background-image를 넣기
+    - 이런 경우 이미지를 서버 등을 통해 동적으로 받아오는 경우가 많은데
+      - 이 때 inline style로 background-image를 넣으면 편리
+    - ex. `<figure style="background-image: url(...);">`
+    - 다만 이 경우에도 이미지의 position, 크기 등 스타일은 inline이 아닌 css 파일 등으로 지정
+- background-image를 넣은 `<figure>`을 flex item으로 만들었을 때 찌그러지는 현상 해결
+  - `<figure>`가 flex-shrink: 0; 부여
+- cf. rem을 사용할 때와 em을 사용할 때를 구분하여 의도를 갖고 사용할 것
+
+### Flex UI \#5 - 유저 리스트
+- 창이 줄어들었을 때 텍스트 말줄임 처리하기(위 메시지 리스트처럼 여러 줄로 넘어가는 방식을 허용하면 안 되는 경우)
+  - 다음이 세트로 묶여 다님
+    - overflow: hidden; → 이 부분이 없으면 좌우 스크롤이 생김
+    - text-overflow: ellipsis; → 이 부분이 없으면 ... 처리가 안 됨
+    - white-space: nowrap; → 이 부분이 없으면 <p>가 차지하는 영역의 height가 증가하는 것을 막을 수 없음
+
+### Flex UI \#6 - 모달
+- 뷰포트 크기에 상관 없이 한 가운데에 있는 모달 만들기
+  - modal의 position은 fixed 또는 absolute, 여기서는 fixed를 사용함
+  - 여기서는 fixed를 사용함
+    - left: 0; right: 0; top: 0; bottom: 0;
+  - modal의 display를 flex로 하고 jcc(justify-content: center;), aic(align-items: center;)
+
+### Flex UI \#7 - 카드 리스트
+- 여기서도 이미지를 삽입할 때 `<img>` 대신 `<figure>`의 background를 사용
+  - 이미지의 너비, 비율 등 형태에 상관 없이 쉽게 컨트롤하기 위함
+  - cf. 위 메시지 리스트에서의 작업과 마찬가지로 서버에서 불러오는 작업을 편리하게 하기 위해
+    - 이미지의 url만은 inline css로 삽입
+  - `<figure>`의 background-image에 처음으로 값을 주게 되면
+    - 기본적으로 `<figure>`는 display: block;이고,
+    - background-repeat의 기본값은 repeat이므로
+      - cf. [MDN - background-reapeat](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat#formal_definition)
+    - 뷰포트의 길이만큼 이미지가 반복
+  - 가로 세로 비율을 유지해주는 반응형 박스를 만들기 위해 padding-bottom을 사용하여 박스 모델에 height 값을 부여
+    - ex. height: 0; padding-bottom: 60%;
+      - 이렇게 작성한 경우, 박스 모델의 content의 height는 0으로 주고,
+      - 단지 박스를 감싼 요소의 width에 따라서 박스 모델의 padding을 포함한 height가 결정되도록 한 것
+    - \(동작 설명\) padding: 100%는 안의 box-model의 content가 최대한 늘어날 수 있는 width을 의미
+      - padding을 % 값으로 줄 경우, 세로 padding이든 가로 padding이든 상관 없이 width를 기준으로 계산됨
+      - cf. [MDN - padding-top](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top#formal_definition)
+        - "Formal definition → Percentages refer to the width of the containing block"
+  - background-image의 크기 및 반복 설정
+    - background-repeat: no-repeat; background-position: center; background-size: cover;
+    - background-size: cover; 덕분에 원본 이미지의 너비, 비율에 상관 없이 박스를 보기 좋게 채움
+- 뷰포트 너비에 따라 1단, 2단, 3단 카드 리스트가 되도록 반응형 작업
+  - 1단 작업부터 시작하면 우선 flex는 고려하지 않아도 됨
+  - 600px부터 2단으로 보이게 하기 → 여기부터 flex 필요
+    - 1단 작업부터 시작했으므로 @media (min-width: ...) 사용
+    - 우선 container인 .card-list에 display: flex; 부여
+    - 2단이 되도록 하기 위해
+      - container에 flex-wrap: wrap; 설정으로 공간이 모자라면 다음 행으로 떨어지도록 처리하고
+      - item들의 width를 container width의 절반으로 설정 및 좌우 padding 설정 → width: 50% padding: 0 1rem;
+        - cf. item들의 width를 container width의 절반 값보다 작게하고(ex. width: 46%)
+          - justify-content: space-between;으로 한 행의 item끼리 살짝 떨어지도록 할 경우
+          - 2단일 때는 괜찮아보이지만 3단일 때 가운데가 비는 문제가 생김
+      - 마지막으로 container 전체의 좌우 margin이 item의 좌우 padding과 크기가 같은 음수값이 계산되도록 하여
+        - 각 행이 container를 꽉 채운 모습이 되게 만듦
+- 각 행 내의 card-item의 설명 부분의 높이는 같고, 서로 다른 행의 설명 부분의 높이는 다를 수 있게 만들기
+  - 알아서 늘어나게? → flex-grow 사용
+  - 각 .card-item 요소들의 박스 모델의 height는 각 행에서 가장 큰 박스의 height로 맞춰짐을 활용
+    - .card-item 자체를 flex container로 사용
+- 음수 margin을 사용했을 때 발생하는 가로 스크롤 해결
+  - html container 역할 요소로 감싼 후 overflow-x: hidden; 부여
+
 ## Flex로 반응형 페이지 만들기
+- 이미 만들어놓은 UI를 조합하여 반응형 페이지 만들기
+
+### Flex 반응형 페이지 Step 1 - 레이아웃 고려 마크업
+- 레이아웃 영역 구분하여 미리 생각하기 - 헤더, 메뉴, 왼쪽 오른쪽 사이드바, 메인 컨텐츠 영역, 푸터 등
+- 만들어 놓은 요소들을 기반으로 마크업 진행
+
+### Flex 반응형 페이지 Step 2 - 1단 스타일 작업
+- 검색바의 input의 width를 조정할 때
+  - input은 이미 flex item이고 flex container의 width에 따라 item의 width로 바뀔 수 있으므로
+  - item인 input의 width를 직접 조정하기보다는 container인 form의 width를 조정하여 간접적으로 input의 width를 조정
+- 보통 요소 간 세로 간격을 줄 때는 margin-bottom을 주는 게 더 보기 좋을 때가 많음
+
+### Flex 반응형 페이지 Step 3 - CSS로 모달 열고 닫기 구현
+- 모달 열고 닫기를 CSS로 구현
+  - `<input>`의 id와 `<label>`의 for를 같게 맞추면
+    - label을 클릭해도 input이 동작하는 것을 활용
+  - 형제 결합자 ~ 이용(cf. +는 인접 형제 결합자로 바로 다음 형제 요소만 선택)
+  - ex. #modal-switch:checked~.modal
+  - 참고
+    - [MDN - Subsequent-sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator)
+    - [MDN - Next-sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator)
+
+### Flex 반응형 페이지 Step 4 - flex를 활용한 반응형 사이드바 구현
+- 반응형 → @media (min-width: ...) 사용
+- 굳이 감싸는 container를 더 만들지 않고 flex를 사용해서 배치 가능
+  - flex이므로 우선 축의 방향부터 정하기
+  - flex-wrap: wrap;일 때 flex item의 크기가 container를 벗어나면 아래로 떨어지는 특성을 활용
+  - **폭이 정해진 item들은 flex-grow보다 width를 사용하는 편이 훨씬 나음**
+  - flex item에게 부여할 수 있는 order 속성을 활용하여 item 간의 순서 변경
+    - cf. 같은 flex container에 있는 다른 item들에 order를 명시하지 않으면 order: 0;이 됨에 유의
+- (column 같은 느낌을 주는 레이아웃) width가 정해진 flex item들을 배치하는 경우, flex-grow보다 width를 사용하는 게 안전한 경우가 있음
+  - 반면 애초에 유연한 너비를 갖는 flex item들을 배치하는 경우, flex-grow를 사용하는 것이 편리할 수 있음
 
 ## Grid 핵심 정리
 
