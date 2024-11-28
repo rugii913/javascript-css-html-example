@@ -766,4 +766,42 @@
     - 이 때문에 방법 1을 사용한 경우 이미지의 사이즈, 위치 조절이 자유로움
     - 이미지의 위치를 조절해야만 하는 경우 방법 2를 사용하기는 곤란함
 
+### 그리기: 레이아웃 그리드 개념 이해
+- 레이아웃 그리드(layout grid): 레이아웃을 안정적으로 잡아줄 수 있는 가이드라인
+  - 디자인에 일관성을 부여
+    - 화면 양쪽 여백, 컨텐츠 사이 간격, 텍스트 가로 세로 사이즈 등에서도 일관적인 디자인을 도움
+  - 실제 UI 요소가 되지는 않음
+  - 스케치 후 와이어프레임 그리는 단계에서 대략적인 레이아웃을 고민해봄직 함
+- 레이아웃 그리드 만들기
+  - 프레임 선택 후 design panel의 Layout grid 부분 이용
+  - 추가 및 활성화 시키기
+    - + 버튼 클릭 시 우선 그리드로 활성화됨
+    - 바둑판 모양 아이콘을 클릭하면 상세 설정 가능
+  - 상세 설정
+    - 드롭다운 메뉴에서 레이아웃 모양을 Grid, Columns(열), Rows(행) 중 선택 가능
+    - Columns를 선택하고 다음과 같은 상세 설정 가능
+      - Count: column의 수
+      - Color: 화면에 보이는 레이아웃의 색과 투명도
+      - Type: Left, Right, Center, Stretch 중 선택 - 각 column이 어떻게 배치되는지
+        - Left, Right, Center로 정한 경우 column 한 개당 width 지정 가능
+        - Stretch의 경우 선택한 frame 기준으로 Margin, Gutter 계산 후 남은 부분을 각 column이 균등하게 Width로 가져가도록 자동 계산(Width Auto)
+      - Gutter: column 사이의 간격
+      - Offset: (Left, Right) 시작 지점에서 몇 px 떨어져서 시작할 것인지 수치
+      - Margin: (Stretch만) Column 양 여백 간격
+    - Rows, Grid도 비슷한 방식으로 상세 설정할 수 있음
+- Grid styles에 등록해서 다른 프레임에서도 사용하기
+  - Grid styles 등록하기
+    - Layout grid 오른쪽, + 버튼 왼쪽의 Styles 버튼(네모 네 개) 클릭
+    - Create Style 버튼(+ 모양) 클릭
+    - Name, Description 입력 후 파란색 Create Style 버튼 클릭
+  - Grid styles 등록 확인 및 수정하기
+    - 캔버스 상태(아무 object도 선택하지 않은 상태) Design panel의 Grid styles에서 등록된 grid style 확인 가능
+    - 각 grid style에 mouse over 했을 때 보이는 오른쪽 Edit style을 클릭하면 수정 가능
+  - 등록된 grid style 사용하기
+    - frame 선택 후 design panel의 Layout grid 부분 Style 버튼(네모 네 개) 클릭 후 사용할 style 클릭
+- 적용된 layout grid 숨기기
+  - design panel의 Layout grid 부분 각 style에 mouse over 했을 때 보이는 눈 모양 클릭
+    - (cf.) 다른 frame에 적용된 같은 grid style이 모두 숨김 처리되므로 유의
+- grid style 삭제
+  - 캔버스 상태 design panel의 Grid styles에서 삭제할 grid style에 mouse over 후 우클릭 후 Delete style 클릭
 
