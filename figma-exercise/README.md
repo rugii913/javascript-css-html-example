@@ -805,3 +805,12 @@
 - grid style 삭제
   - 캔버스 상태 design panel의 Grid styles에서 삭제할 grid style에 mouse over 후 우클릭 후 Delete style 클릭
 
+### 그리기: 불리언 연산하기
+- 불리언 연산: 2가지 이상의 element가 겹쳐있는 경우, 겹치는 부분을 개선해서 결합하고 group으로 만드는 방법
+  - Union selection: 위의 element의 속성이 아래의 element에도 적용하며 결합
+  - Subtract selection: 밑의 element에서 위의 element만큼의 크기를 빼며 결합
+  - Intersect selection: 여러 element가 서로 겹쳐있는 크기만 남기며 결합, 이 때 속성은 위 element의 속성을 따라감
+  - Exclude selection: 여러 element에서 서로 겹쳐져 있지 않은 크기만 남기며 결합, 이 때 속성은 위 element의 속성을 따라감
+- 불리언 연산된 element들을 불리언 연산 후 연산의 이름을 가진 group이 되며
+  - Ungroup(단축키: ctrl + backspace)하면 원본 element들로 그대로 돌아옴
+- cf. Flatten selection(단축키: ctrl + e): 불리언 연산 결과인 group의 원본을 없애고, path로만 남김, 최종 배포 시 사용
