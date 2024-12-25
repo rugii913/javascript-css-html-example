@@ -814,3 +814,15 @@
 - 불리언 연산된 element들을 불리언 연산 후 연산의 이름을 가진 group이 되며
   - Ungroup(단축키: ctrl + backspace)하면 원본 element들로 그대로 돌아옴
 - cf. Flatten selection(단축키: ctrl + e): 불리언 연산 결과인 group의 원본을 없애고, path로만 남김, 최종 배포 시 사용
+
+### 속성 설정: Constraints 이해하기
+- Constraints: frame 안의 object를 frame을 기준으로 제약을 걸어주는 것
+  - frame 안의 object를 선택하면 Design panel에 Constraints 부분이 표시
+    - frame 안의 frame을 선택해도 Constraints가 표시됨
+    - frame 안에 있는 object가 아니라면 Constraints가 표시되지 않음
+  - 박스와 박스 사이 표시된 네 선은 바깥 frame 변과 안 object의 변의 관계를 의미
+    - 각 선을 클릭하면 해당 변 간의 거리를 고정시킴
+    - shift + 클릭으로 좌우 거리를 동시에 고정시키거나, 위아래 거리를 동시에 고정시킬 수 있음 / select box에서 동시 고정을 선택할 수도 있음
+      - 좌우 거리가 동시에 고정되거나 위아래 거리가 동시에 고정된 경우, 안 object의 사이즈가 변경됨
+    - center는 바깥 frame의 center와 안 frame의 center의 거리를 고정
+    - scale은 frame 변과 object 변 간 길이 비율에 맞춰 조정 → 안 object의 사이즈가 변경됨
