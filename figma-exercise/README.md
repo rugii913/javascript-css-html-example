@@ -807,7 +807,7 @@
 
 ### 그리기: 불리언 연산하기
 - 불리언 연산: 2가지 이상의 element가 겹쳐있는 경우, 겹치는 부분을 개선해서 결합하고 group으로 만드는 방법
-  - Union selection: 위의 element의 속성이 아래의 element에도 적용하며 결합
+  - Union selection: 위의 element의 속성을 아래의 element에도 적용하며 결합
   - Subtract selection: 밑의 element에서 위의 element만큼의 크기를 빼며 결합
   - Intersect selection: 여러 element가 서로 겹쳐있는 크기만 남기며 결합, 이 때 속성은 위 element의 속성을 따라감
   - Exclude selection: 여러 element에서 서로 겹쳐져 있지 않은 크기만 남기며 결합, 이 때 속성은 위 element의 속성을 따라감
@@ -826,3 +826,14 @@
       - 좌우 거리가 동시에 고정되거나 위아래 거리가 동시에 고정된 경우, 안 object의 사이즈가 변경됨
     - center는 바깥 frame의 center와 안 frame의 center의 거리를 고정
     - scale은 frame 변과 object 변 간 길이 비율에 맞춰 조정 → 안 object의 사이즈가 변경됨
+
+### \[예제 실습\] 자주 사용하는 아이콘 만들기 - 알림, 설정 → 레이아웃 그리드, 불리언 연산, Constraints 활용해보기
+- (1) 24px * 24px 프레임에서 시작
+- (2) 간소한 icon grid, keyline 그리기: 레이아웃 그리드 활용
+  - Layout grid들 추가: 1column 20px, 1column 18px, 1row 20px, 1row 18px → 정사각형이 아닌 아이콘을 만들 때 기준점을 잡아줌
+  - 위처럼 만든 Layout grid를 위에서 보았듯 Grid Styles에 등록해서 재사용 가능
+- (3) 알림(종 모양), 설정(톱니바퀴 모양) 아이콘 만들기: shape tool과 불리언 연산 활용
+  - shape 세부 수정 모드 - 포인트 추가, 포인트 선택 후 화살표 키로 크기 조절 가능, bend tool 활용
+  - 적절히 복붙 후 union selection, subtract selection을 섞어서 여러 번 연산
+  - cf. Actions(단축키 ctrl + k 혹은 ctrl + /)에서 검색 → Swap fill and stroke(단축키 shift + x)을 이용하여
+    - 불리언 연산으로 계산된 모양을 stroke 형태로 바꿀 수 있음
